@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RGBA</title>
+    <style>
+        #container {
+            border: 3px double lightgray;
+            display: inline-block;
+            margin: 5px;
+            padding: 5px;
+        }
+        
+        input {
+            display: block;
+        }
+        
+        p {
+            margin: 15px 0 0 0;
+        }
+    </style>
+    <script>
+        function changeColor() {
+            let r, g, b, a, col;
+            r = document.getElementById('red').value;
+            g = document.getElementById('green').value;
+            b = document.getElementById('blue').value;
+            a = document.getElementById('alpha').value / 10;
+            console.log(r, g, b, a);
+            col = "rgba" + "(" + r + ", " + g + ", " + b + ", " + a + ")";
+            document.getElementById('textColor').innerHTML = col;
+            document.getElementById('bgColor').style.background = col;
+            document.getElementById('bgColor').style.borderColor = col;
+
+            document.getElementById('valRed').innerHTML = r;
+            document.getElementById('valGreen').innerHTML = g;
+            document.getElementById('valBlue').innerHTML = b;
+            document.getElementById('valAlfa').innerHTML = a;
+
+        }
+    </script>
+</head>
+
+<body>
+
+    <div id="container">
+        <div id="bgColor" style="width:250px; height:80px; border:2px dashed black">
+            <div id="textColor"></div>
+        </div>
+        <div class="container">
+            <b><p style = "color: tomato;">RED</p></b>
+            <input type="range" oninput="changeColor();" onchange="changeColor();" id="red" min="0" max="255" value="60">
+            <div id="valRed"></div>
+            <b><p style = "color:mediumseagreen">GREEN</p></b>
+            <input type="range" oninput="changeColor();" onchange="changeColor();" id="green" min="0" max="255" value="120">
+            <div id="valGreen"></div>
+            <b><p style = "color:dodgerblue">BLUE</p></b>
+            <input type="range" oninput="changeColor();" onchange="changeColor();" id="blue" min="0" max="255" value="180">
+            <div id="valBlue"></div>
+            <b><p style = "color:gray;">ALFA</p></b>
+            <input type="range" oninput="changeColor();" onchange="changeColor();" id="alpha" min="0" max="10" step="1">
+            <div id="valAlfa"></div>
+        </div>
+    </div>
+    <script>
+        changeColor();
+    </script>
+</body>
+
+</html>

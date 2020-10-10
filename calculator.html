@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    <style>
+        body {
+            box-sizing: border-box;
+        }
+        
+        table {
+            width: 320px;
+            height: 300px;
+            background: linear-gradient(springgreen, yellow);
+            border-radius: 13%;
+            text-align: center;
+            font-weight: bold;
+            border: 2px dashed green;
+            padding: 10px;
+        }
+        
+        td div {
+            display: inline-block;
+            padding: 10px 20px;
+            border-radius: 20px;
+            border: 1px dotted lightgray;
+            background: white;
+        }
+        
+        .top {
+            padding: 7px 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <table>
+        <div id="result">
+            <tr>
+                <td colspan="4">
+                    <div class="top" style="width: 220px; height:25px"></div>
+                </td>
+            </tr>
+        </div>
+        <div id="keys">
+            <tr>
+                <td>
+                    <div>0</div>
+                </td>
+                <td>
+                    <div style="background:gold;">C</div>
+                </td>
+                <td>
+                    <div style="background:limegreen;">=</div>
+                </td>
+                <td>
+                    <div>*</div>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <div>1</div>
+                </td>
+                <td>
+                    <div>2</div>
+                </td>
+                <td>
+                    <div>3</div>
+                </td>
+                <td>
+                    <div>/</div>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <div>4</div>
+                </td>
+                <td>
+                    <div>5</div>
+                </td>
+                <td>
+                    <div>6</div>
+                </td>
+                <td>
+                    <div>-</div>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <div>7</div>
+                </td>
+                <td>
+                    <div>8</div>
+                </td>
+                <td>
+                    <div>9</div>
+                </td>
+                <td>
+                    <div>+</div>
+                </td>
+            </tr>
+        </div>
+    </table>
+</body>
+
+</html>
