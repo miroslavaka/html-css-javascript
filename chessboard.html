@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>chessboard</title>
+    <style>
+        #container{
+            border: 1px solid black;
+        }
+    </style>
+</head>
+<body>
+    <div id = "container"></div>
+
+    <script>
+        var tableContainer = document.getElementById('container');
+       
+    function createchessBoard(){
+        var table = document.createElement('TABLE');
+        table.border = "1";
+        tableContainer.appendChild(table);
+
+        for(var i = 1; i<=10; i++){
+            var mytr = document.createElement('TR');
+            
+            for(var j = 1; j<=10; j++) {
+                table.appendChild(mytr);
+                var mytd = document.createElement('TD');
+                mytd.width = '100';
+                mytd.height = '70';
+                if(i%2 != 0 && j%2 != 0){
+                    mytd.style.background = "black";
+                }
+                else if(i%2== 0 && j%2== 0){
+                    mytd.style.background = "black";
+                }
+                else{
+                    mytd.style.background = "white";
+                }
+                mytr.appendChild(mytd);
+            }   
+        }
+    }
+    createchessBoard();
+    </script>
+</body>
+</html>
