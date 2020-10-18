@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>polia</title>
+</head>
+
+<body>
+    <div id="display">
+        <p id="one"></p>
+        <p id="two"></p>
+        <p id="three"></p>
+        <p id="four"></p>
+    </div>
+    <script>
+        //pole1= ['a','aa','as','ad','af','ag','ah','aj','ak','al'];
+        //pole2 = ['ba','baa','bas','bad','baf','bag','bah',"bak"];
+        //polia spojit
+        //poleVymaz =[3,7,9,17];
+        //poleElementovNaPridanie =['cd', 'csdfd', 'casdfd','sadf'];
+        //vypisat polozky pola podla abecedy vzostupne ..sort()
+
+        let arr1 = ['a', 'aa', 'as', 'ad', 'af', 'ag', 'ah', 'aj', 'ak', 'al'];
+        let arr2 = ['ba', 'baa', 'bas', 'bad', 'baf', 'bag', 'bah', 'bab'];
+        let arr3 = [];
+        let itemsToDelete = [3, 7, 9, 17];
+        let itemsToAdd = ['cd', 'csdfd', 'casdfd', 'sadf'];
+
+
+        function joinArr() {
+            let one = document.getElementById('one');
+            let two = document.getElementById('two');
+            let three = document.getElementById('three');
+            let four = document.getElementById('four');
+
+            //SPOJENIE POLI:
+            arr3 = arr1.concat(arr2);
+            one.innerHTML = "Pole1 spojene s Polom2: <b>" + arr3 + "</b>";
+
+
+            //VYMAZANIE POLOZIEK:
+            for (var i = itemsToDelete.length - 1; i > -1; i--) {
+                //console.log(i);
+                for (var j = arr3.length - 1; j > -1; j--) {
+                    // console.log(j);
+                    if (itemsToDelete[i] == j) {
+                        arr3.splice(j, 1)
+                    }
+                }
+                console.log(arr3);
+            }
+            two.innerHTML = "Pole po vymazani poloziek 3, 7, 9. 17 je: <b>" + arr3 + "</b>";
+
+            //PRIDANIE NOVYCH POLOZIEK:
+            var z = 0;
+            while (z < itemsToAdd.length) {
+                console.log(z);
+                arr3.push(itemsToAdd[z]);
+                z++;
+                console.log(arr3);
+            }
+            three.innerHTML = "Pole s novymi polozkami: <b>" + arr3 + "</b>";
+
+            //ZOTRIEDENIE PODLA ABECEDY:
+            arr3.sort();
+            four.innerHTML = "Pole zoradene podla abecedy: <b>" + arr3 + "</b>";
+
+        }
+
+
+        joinArr();
+    </script>
+</body>
+
+</html>
