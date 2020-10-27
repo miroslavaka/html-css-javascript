@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>time</title>
+    <style>
+        button {
+            padding: 15px;
+            border-radius: 10px;
+            background: violet;
+            color: white;
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+            font-size: large;
+        }
+    </style>
+</head>
+
+<body>
+    <script>
+        var currDay = new Date();
+        console.log(currDay);
+        var visit = currDay.getTime();
+        console.log(visit);
+
+        function clock() {
+            var currDayTwo = new Date();
+            console.log(currDayTwo);
+            var hrNow = currDayTwo.getHours();
+            var miNow = currDayTwo.getMinutes();
+            var seNow = currDayTwo.getSeconds();
+            var misecNow = currDayTwo.getMilliseconds();
+            var tiNow = currDayTwo.getTime();
+
+            //console.log(hrNow + ":" + miNow + ":" + seNow + ":" + misecNow + " " + tiNow);
+            var timex = hrNow + ":" + miNow + ":" + seNow + ":" + misecNow + " " + tiNow;
+            document.getElementById('moj').innerHTML = timex;
+            setTimeout('clock()', 1000);
+        }
+        document.write("<button id = \"moj\"></button>");
+        clock();
+    </script>
+</body>
+
+</html>
