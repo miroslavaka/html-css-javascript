@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>map</title>
+    <style>
+        #myTable {
+            position: absolute;
+            left: 46%;
+            text-align: center;
+            border-collapse: collapse;
+        }
+        
+        h3 {
+            text-align: center;
+            margin: 20px auto;
+        }
+        
+        td {
+            background: lightgray;
+        }
+        
+        td:nth-child(2) {
+            background: lightgreen;
+        }
+        
+        .myfail+td {
+            background: tomato;
+        }
+    </style>
+</head>
+
+<body>
+    <p id="exercise"></p>
+    <h3>Exam Marks and Grades:</h3>
+    <div id="myTable">
+    </div>
+    <script>
+        var numbers = [5, 6, 18, 34, 15, 50];
+
+        //DOUBLE VALUES in array + SORT
+        var newnumbers = numbers.map(double);
+        var newnumbersSort = newnumbers.sort(function(a, b) {
+            return b - a;
+        });
+        //document.getElementById('exercise').innerHTML = newnumbersSort;
+
+        function double(value) {
+            return value * 2;
+        }
+
+        //TABLE
+        var myTable = document.getElementById('myTable');
+
+        function createTab() {
+            var table = document.createElement('TABLE');
+            myTable.appendChild(table);
+            table.border = '1';
+
+            create_nazov('Marks');
+            create_nazov('Grades');
+
+            function create_nazov(nazov) {
+                var myth = document.createElement('TH');
+                table.appendChild(myth);
+                myth.appendChild(document.createTextNode(nazov));
+            }
+
+            for (var i = 0; i < newnumbers.length; i++) {
+                var mytr = document.createElement('TR');
+                table.appendChild(mytr);
+
+                var mytd = document.createElement('TD');
+                mytr.appendChild(mytd);
+                mytd.appendChild(document.createTextNode(newnumbers[i]));
+
+                if (newnumbers[i] <= 100 && newnumbers[i] >= 80) {
+                    create_td('A');
+                } else if (newnumbers[i] < 79 && newnumbers[i] >= 50) {
+                    create_td('B');
+                } else
+                if (newnumbers[i] < 49 && newnumbers[i] >= 20) {
+                    create_td('C');
+                } else {
+                    create_td('FAIL');
+                    var newAttribute = document.createAttribute("class");
+                    newAttribute.value = "myfail";
+                    mytd.setAttributeNode(newAttribute);
+                    //mytd.style.backgroundColor = "tomato";
+                }
+            }
+
+            function create_td(obsah) {
+                var mytd = document.createElement('TD');
+                mytr.appendChild(mytd);
+                mytd.appendChild(document.createTextNode(obsah));
+            }
+
+        }
+        createTab();
+    </script>
+</body>
+
+</html>
