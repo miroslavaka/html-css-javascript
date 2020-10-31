@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Itim&family=Playfair+Display:ital,wght@0,400;1,400;1,600&family=Titillium+Web&display=swap" rel="stylesheet">
+    <title>Document</title>
+    <style>
+        body {
+            background: #fd6c9e;
+            /*background: lime;*/
+        }
+        
+        .container {
+            position: relative;
+            top: 100px;
+            text-align: center;
+        }
+        
+        h1 {
+            color: #fff;
+            font-family: 'Itim', cursive;
+            font-size: 4em;
+            margin: 5px;
+            transition: 1s;
+            transform: rotateX(30deg);
+            text-shadow: 0 4px 3px rgba(0, 0, 0, 0.2);
+        }
+        
+        h1 span {
+            display: inline-block;
+            width: 80px;
+            padding: 25px 15px;
+            /* transform: skew(-20deg);*/
+            /*transition: 1.5s;*/
+            box-shadow: 0 20px 20px rgba(0, 0, 0, 0.3);
+            margin-left: -11px;
+        }
+        
+        h1 span:nth-child(odd) {
+            background: #fe28a2;
+            transform: skew(-20deg);
+        }
+        
+        h1 span:nth-child(even) {
+            background: #ff0090;
+            transform: skew(-20deg);
+        }
+        
+        .womanwebacademy {
+            position: absolute;
+            left: 22%;
+            width: 55%;
+        }
+        
+        .womanwebacademy:hover h1 {
+            cursor: pointer;
+            transform: skew(20deg) rotateX(0deg);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="womanwebacademy">
+            <h1>
+                <span>W</span>
+                <span>o</span>
+                <span>m</span>
+                <span>a</span>
+                <span>n</span>
+            </h1>
+            <h1>
+                <span>W</span>
+                <span>e</span>
+                <span>b</span>
+            </h1>
+            <h1>
+                <span>A</span>
+                <span>c</span>
+                <span>a</span>
+                <span>d</span>
+                <span>e</span>
+                <span>m</span>
+                <span>y</span>
+            </h1>
+        </div>
+    </div>
+</body>
+
+</html>
