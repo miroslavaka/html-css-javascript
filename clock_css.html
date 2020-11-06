@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .clock{
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            background-image:repeating-linear-gradient( -45deg, transparent 0 15px, black 15px 25px);
+            border: 6px solid rgb(51, 51, 51);
+            box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.4);
+            position: relative;
+            top: 50px;
+            left: 50px;
+            
+        }
+        .inner1-div{
+            width: 100px;
+            height: 100px;
+            background:black;
+            position: absolute;
+            border-radius: 100% 0 0 0;
+            
+        }
+        .inner2-div{
+            width: 100px;
+            height: 100px;
+            background: rgb(233, 203, 33);
+            position: absolute;
+            border-radius:100% 0 0 0;
+            
+            transform:rotate(180deg);
+            left: 100px;
+            top: 100px;
+        }
+
+       
+        .hand{
+            width: 80px;
+            height: 4px;
+            background: gray;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+            animation-name: handrotation;
+            animation-duration: 13s;
+            animation-iteration-count: infinite;
+            animation-timing-function:linear;
+            transform-origin: center left;
+            
+        }
+        .hand::before{
+            content: " ";
+            width:6px;
+            height:6px;
+            background: black;
+            border-radius: 50%;
+            position: absolute;
+            top: -1px;
+        }
+        .hand::after{
+            content: " ";
+            width:8px;
+            height:8px;
+            background: gray;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+            position: absolute;
+            border-radius:100% 0 100% 100%;
+            transform:rotate(45deg);
+            left: 75px;
+            top: -2px;
+        }
+
+        @keyframes handrotation{
+            to{
+                transform: rotate(360deg);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class = "clock">
+        <div class = "inner1-div"></div>
+        <div class = "inner2-div"></div>
+        <div class = "hand"></div>
+    </div>
+</body>
+</html>
