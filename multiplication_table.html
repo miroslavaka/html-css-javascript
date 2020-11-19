@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>multiplication table</title>
+    <style>
+        #container {
+            display: flex;
+            justify-content: center;
+        }
+        
+        h3 {
+            text-align: center;
+        }
+        
+        td {
+            width: 45px;
+            height: 45px;
+            font-size: 9px;
+            text-align: center;
+        }
+        
+        tr:first-child {
+            background: #cadb93;
+        }
+        
+        tr:nth-child(2),
+        td:nth-child(2) {
+            background: #74c0a6;
+        }
+        
+        tr:nth-child(3),
+        td:nth-child(3),
+        tr:nth-child(3),
+        td:nth-child(2) {
+            background: #76c4d7;
+        }
+        
+        tr:nth-child(4),
+        td:nth-child(4),
+        tr:nth-child(4) td:nth-child(3),
+        tr:nth-child(4) td:nth-child(2) {
+            background-color: #8bb2d3;
+        }
+        
+        tr:nth-child(5),
+        td:nth-child(5),
+        tr:nth-child(5) td:nth-child(4),
+        tr:nth-child(5) td:nth-child(3),
+        tr:nth-child(5) td:nth-child(2) {
+            background-color: #a7afd8;
+        }
+        
+        tr:nth-child(6),
+        td:nth-child(6),
+        tr:nth-child(6) td:nth-child(5),
+        tr:nth-child(6) td:nth-child(4),
+        tr:nth-child(6) td:nth-child(3),
+        tr:nth-child(6) td:nth-child(2) {
+            background-color: #c6a7d8;
+        }
+        
+        tr:nth-child(7),
+        td:nth-child(7),
+        tr:nth-child(7) td:nth-child(6),
+        tr:nth-child(7) td:nth-child(5),
+        tr:nth-child(7) td:nth-child(4),
+        tr:nth-child(7) td:nth-child(3),
+        tr:nth-child(7) td:nth-child(2) {
+            background-color: #dea6c5;
+        }
+        
+        tr:nth-child(8),
+        td:nth-child(8),
+        tr:nth-child(8) td:nth-child(7),
+        tr:nth-child(8) td:nth-child(6),
+        tr:nth-child(8) td:nth-child(5),
+        tr:nth-child(8) td:nth-child(4),
+        tr:nth-child(8) td:nth-child(3),
+        tr:nth-child(8) td:nth-child(2) {
+            background-color: #f99595;
+        }
+        
+        tr:nth-child(9),
+        td:nth-child(9),
+        tr:nth-child(9) td:nth-child(8),
+        tr:nth-child(9) td:nth-child(7),
+        tr:nth-child(9) td:nth-child(6),
+        tr:nth-child(9) td:nth-child(5),
+        tr:nth-child(9) td:nth-child(4),
+        tr:nth-child(9) td:nth-child(3),
+        tr:nth-child(9) td:nth-child(2) {
+            background-color: #f9a07d;
+        }
+        
+        tr:nth-child(10),
+        td:nth-child(10),
+        tr:nth-child(10) td:nth-child(9),
+        tr:nth-child(10) td:nth-child(8),
+        tr:nth-child(10) td:nth-child(7),
+        tr:nth-child(10) td:nth-child(6),
+        tr:nth-child(10) td:nth-child(5),
+        tr:nth-child(10) td:nth-child(4),
+        tr:nth-child(10) td:nth-child(3),
+        tr:nth-child(10) td:nth-child(2) {
+            background-color: #f5af62;
+        }
+    </style>
+</head>
+
+<body>
+    <h3>Multiplication table</h3>
+    <div id="container"></div>
+    <script>
+        let table = document.getElementById('container');
+
+        function createTable() {
+            let mytable = document.createElement('TABLE');
+            table.appendChild(mytable);
+            for (let i = 1; i < 11; i++) {
+                let mytr = document.createElement('TR');
+                mytable.appendChild(mytr);
+                for (let j = 1; j < 11; j++) {
+                    let mytd = document.createElement('TD');
+                    mytr.appendChild(mytd);
+                    let multiply = i * j;
+                    mytd.appendChild(document.createTextNode(i + "*" + j + "=" + multiply));
+
+                }
+            }
+        }
+        createTable();
+    </script>
+</body>
+
+</html>
