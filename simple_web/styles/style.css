@@ -1,0 +1,101 @@
+@import url('layout.css');
+body {
+    background: lightgoldenrodyellow;
+    margin: 0;
+    padding: 0;
+}
+
+
+/*div .images {
+        display: sticky;
+        position: fixed;
+        top: 0;
+    }*/
+
+#head .images {
+    display: flex;
+    justify-content: center;
+}
+
+#head img {
+    box-shadow: 0px 0px 0px 2px rgba(0, 0, 0, 0.2);
+}
+
+#navigation {
+    position: relative;
+    /*width: 20%;*/
+}
+
+#navigation ul {
+    float: left;
+    /*width: 10%;*/
+    margin-top: 25px;
+    margin-right: 25px;
+}
+
+#navigation ul li {
+    list-style: none;
+    background: olivedrab;
+    border: 1px dotted yellowgreen;
+    box-shadow: 0 0 1px 1px rgba(0, 0, 0, 0.1);
+    padding: 10px 25px;
+    margin: 1px 10px 0 15px;
+    border-radius: 5px;
+    text-align: center;
+}
+
+#navigation ul li a {
+    text-decoration: none;
+    color: lightgoldenrodyellow;
+}
+
+#content {
+    width: 75%;
+    float: left;
+    border: 1px dashed olive;
+    border-radius: 10px;
+    margin: 25px 20px 25px 40px;
+    padding: 0 0 50px 20px;
+    box-sizing: border-box;
+}
+
+#wrapper {
+    display: flex;
+    justify-content: center;
+    /*align-items: center;*/
+    flex-wrap: wrap;
+    width: 100%;
+}
+
+.style1,
+.style2,
+.style3,
+.style4 {
+    border: 1px solid olivedrab;
+    box-shadow: 0 0 1px 1px rgba(0, 0, 0, 0.05);
+    border-radius: 5px;
+    padding: 0 10px;
+    margin: 5px;
+    /*display: inline-block;*/
+    flex-basis: 150px;
+    flex-grow: 1;
+}
+
+#footer {
+    width: 100%;
+    display: inline-block;
+}
+
+#footer ul {
+    text-align: center;
+}
+
+#footer ul li {
+    list-style-type: circle;
+    display: inline;
+    padding: 0 5px;
+}
+
+#footer ul li a {
+    text-decoration: undeline;
+}

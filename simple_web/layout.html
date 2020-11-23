@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>layout</title>
+    <style>
+        #container {
+            background: lightgreen;
+            width: 70%;
+            height: 620px;
+            margin: auto;
+            position: relative;
+            box-sizing: border-box;
+        }
+        
+        #box1 {
+            background: lightpink;
+            width: 46%;
+            height: 275px;
+            margin: 15px;
+            padding: 0 5px 10px 5px;
+            position: absolute;
+            left: 0;
+        }
+        
+        #box2 {
+            background: lavender;
+            width: 46%;
+            height: 275px;
+            margin: 15px;
+            padding: 0 5px 10px 5px;
+            position: absolute;
+            right: 0;
+        }
+        
+        #box3 {
+            background: lightskyblue;
+            width: 46%;
+            height: 275px;
+            margin: 15px;
+            padding: 0 5px 10px 5px;
+            position: absolute;
+            left: 0;
+            bottom: 0;
+        }
+        
+        #box4 {
+            background: lightgoldenrodyellow;
+            width: 46%;
+            height: 275px;
+            margin: 15px;
+            padding: 0 5px 10px 5px;
+            position: absolute;
+            right: 0;
+            bottom: 0;
+        }
+        
+        #box5 {
+            background: yellow;
+            width: 20%;
+            height: 40px;
+            text-align: center;
+            line-height: 1;
+            position: absolute;
+            left: 40%;
+            top: 45%;
+        }
+        
+        @media only screen and (max-width: 960px) {
+            #box1,
+            #box2,
+            #box3,
+            #box4 {
+                width: 50%;
+                height: 395px;
+                padding: 7px;
+                margin: 5px;
+                box-sizing: border-box;
+            }
+            #box5 {
+                width: 15%;
+                font-size: 14px;
+                height: 45px;
+                position: absolute;
+                left: 43%;
+                top: 45%;
+            }
+            #container {
+                width: 100%;
+                height: 790px;
+                margin: 0;
+                /*font-size: 14px;*/
+            }
+        }
+        
+        @media only screen and (max-width: 680px) {
+            #container {
+                font-size: 14px;
+            }
+            #box5 {
+                font-size: 13px;
+            }
+        }
+    </style>
+
+</head>
+
+<body>
+    <div id="container">
+        <div id="box1">
+            <h4>Tulip</h4>
+            <p>Tulips (Tulipa) form a genus of spring-blooming perennial herbaceous bulbiferous geophytes (having bulbs as storage organs). The flowers are usually large, showy and brightly colored, generally red, pink, yellow, or white (usually in warm
+                colors). They often have a different colored blotch at the base of the tepals (petals and sepals, collectively), internally. Because of a degree of variability within the populations, and a long history of cultivation, classification has
+                been complex and controversial.</p>
+        </div>
+        <div id="box2">
+            <h4>Orchidaceae</h4>
+            <p>The Orchidaceae are a diverse and widespread family of flowering plants, with blooms that are often colourful and fragrant, commonly known as the orchid family. Along with the Asteraceae, they are one of the two largest families of flowering
+                plants. The Orchidaceae have about 28,000 currently accepted species, distributed in about 763 genera.</p>
+        </div>
+        <div id="box3">
+            <h4>Rose</h4>
+            <p>A rose is a woody perennial flowering plant of the genus Rosa, in the family Rosaceae, or the flower it <sup>[1]</sup> There are over three hundred species and tens of thousands of cultivars.<sup>[1]</sup> They form a group of plants that
+                can be erect shrubs, climbing, or trailing, with stems that are often armed with sharp prickles.<sup>[1]</sup> Flowers vary in size and shape and are usually large and showy, in colours ranging from white through yellows and reds.</p>
+        </div>
+        <div id="box4">
+            <h4>Pansy</h4>
+            <p>The garden pansy is a type of large-flowered hybrid plant cultivated as a garden flower.<sup>[1]</sup> It is derived by hybridization from several species in the section Melanium ("the pansies")<sup>[2]</sup> of the genus Viola, particularly
+                Viola tricolor, a wildflower of Europe and western Asia known as heartsease. Some of these hybrids are referred to as Viola × wittrockiana Gams ex Nauenb. & Buttler. For simplicity, the older name Viola tricolor var. hortensis is often
+                used.
+            </p>
+        </div>
+        <div id="box5">
+            <p>Flowers presentation</p>
+        </div>
+    </div>
+</body>
+
+</html>

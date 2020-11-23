@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        h3 {
+            color: olivedrab;
+            /*border-bottom: 1px dotted yellowgreen;*/
+            padding: 10px 0;
+            margin: auto;
+            width: 10%;
+            text-align: center;
+        }
+        
+        body {
+            box-sizing: border-box;
+        }
+        
+        table {
+            width: 320px;
+            height: 300px;
+            background: linear-gradient(springgreen, yellow);
+            border-radius: 13%;
+            text-align: center;
+            font-weight: bold;
+            border: 2px dashed green;
+            padding: 10px;
+            margin: 20px auto;
+        }
+        
+        td div {
+            display: inline-block;
+            padding: 10px 20px;
+            border-radius: 20px;
+            border: 1px dotted lightgray;
+            background: white;
+            cursor: pointer;
+        }
+        
+        .top {
+            padding: 7px 10px;
+        }
+    </style>
+    <script>
+        function showvalue(value) {
+
+        }
+    </script>
+</head>
+
+<body>
+    <h3>Calculator</h3>
+    <table>
+        <div id="result">
+            <tr>
+                <td colspan="4">
+                    <div id="top" style="width: 220px; height:25px"></div>
+                </td>
+            </tr>
+        </div>
+        <div id="keys">
+            <tr>
+                <td>
+                    <div class="val" onclick="showvalue(0);">0</div>
+                </td>
+                <td>
+                    <div style="background:gold;" onclick="clearvalue();">C</div>
+                </td>
+                <td>
+                    <div style="background:limegreen;">=</div>
+                </td>
+                <td>
+                    <div>*</div>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <div class="val" onclick="showvalue(1);">1</div>
+                </td>
+                <td>
+                    <div class="val" onclick="showvalue(2);">2</div>
+                </td>
+                <td>
+                    <div class="val" onclick="showvalue(3);">3</div>
+                </td>
+                <td>
+                    <div>/</div>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <div class="val" onclick="showvalue(4);">4</div>
+                </td>
+                <td>
+                    <div class="val" onclick="showvalue(5);">5</div>
+                </td>
+                <td>
+                    <div class="val" onclick="showvalue(6);">6</div>
+                </td>
+                <td>
+                    <div>-</div>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <div class="val" onclick="showvalue(7);">7</div>
+                </td>
+                <td>
+                    <div class="val" onclick="showvalue(8);">8</div>
+                </td>
+                <td>
+                    <div class="val" onclick="showvalue(9);">9</div>
+                </td>
+                <td>
+                    <div>+</div>
+                </td>
+            </tr>
+        </div>
+    </table>
+</body>
+
+</html>

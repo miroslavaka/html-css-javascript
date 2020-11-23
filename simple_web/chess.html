@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>black and white board</title>
+    <style>
+        body {
+            background: linear-gradient(to left, #b9deed, #efefef, #b9deed);
+        }
+        
+        #container {
+            position: relative;
+            left: 30%;
+        }
+        
+        table,
+        th,
+        tr,
+        td {
+            border-collapse: collapse;
+            border: 1px solid olivedrab;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="container"></div>
+
+    <script>
+        let main = document.getElementById('container');
+
+        function createTable() {
+            let mytable = document.createElement('TABLE');
+            main.appendChild(mytable);
+
+            for (let i = 0; i < 10; i++) {
+                let mytr = document.createElement('TR');
+                mytable.appendChild(mytr);
+
+                for (let j = 0; j < 10; j++) {
+                    let mytd = document.createElement('TD');
+                    mytr.appendChild(mytd);
+                    //mytd.appendChild(document.createTextNode('hello'));
+                    mytd.style.width = "50px";
+                    mytd.style.height = "50px";
+                    if (i % 2 != 0 && j % 2 != 0) {
+                        mytd.style.background = "lime";
+                    } else if (i % 2 == 0 && j % 2 == 0) {
+                        mytd.style.background = "lime";
+                    } else {
+                        mytd.style.background = "lightseagreen";
+
+                    }
+                }
+
+            }
+
+
+
+        }
+        createTable();
+    </script>
+</body>
+
+</html>

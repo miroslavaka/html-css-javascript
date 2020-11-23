@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro&display=swap" rel="stylesheet">
+    <title>find in string</title>
+    <style>
+        body {
+            font-family: 'Source Code Pro', monospace;
+        }
+        
+        #result #one {
+            margin: auto;
+            /*background: darkseagreen;*/
+            width: 35%;
+        }
+        
+        #result #two {
+            color: lightgoldenrodyellow;
+            background: darkseagreen;
+            display: inline-block;
+            position: relative;
+            left: 25%;
+            padding: 10px;
+            border: 5px solid gray;
+            border-radius: 10px;
+            animation: borderchange 3s linear infinite;
+        }
+        
+        @keyframes borderchange {
+            0% {
+                border: 5px solid turquoise;
+            }
+            50% {
+                border: 5px solid deepskyblue;
+            }
+            100% {
+                border: 5px solid lime;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div id="result">
+        <p id="one"></p>
+        <p id="two"></p>
+    </div>
+
+    <script>
+        let thisstring = "89123749012783490283847598327459032874590273429085732908457";
+        let findstring = "2";
+        let occurrence = thisstring.indexOf(findstring);
+        console.log("prvy vyskyt je: " + occurrence);
+        let lastoccurrence = thisstring.lastIndexOf(findstring);
+        console.log("posledny vyskyt je: " + lastoccurrence);
+
+        let arr = [];
+        arr.push(occurrence);
+        let beginning;
+        let next;
+        let completestring = 0;
+
+        function findStr() {
+            while (lastoccurrence != occurrence) {
+                occurrence = thisstring.indexOf(findstring, occurrence + 1);
+                console.log("dalsi vyskyt je: " + occurrence);
+                arr.push(occurrence);
+            }
+            //document.write("number 2 occurrs on positions: " + arr + " within string 89123749012783490283847598327459032874590273429085732908457");
+            document.getElementById("one").innerHTML = "number 2 occurrs on positions: " + arr;
+
+            //string w/o 2
+            beginning = thisstring.substring(0, arr[0]);
+            console.log("beginning is: " + beginning);
+
+            for (let i = 0; i < arr.length; i++) {
+                next = thisstring.substring(arr[i] + 1, arr[i + 1]);
+                //console.log("NEXT STRING IS " + next);
+                beginning = beginning + next;
+                console.log("COMPLETE STRING IS " + beginning);
+            }
+            document.getElementById("two").innerHTML = "string without number 2 is: " + beginning + "<br>";
+        }
+        findStr();
+    </script>
+</body>
+
+</html>
