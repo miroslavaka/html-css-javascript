@@ -10,10 +10,15 @@
 
     <title>form</title>
     <style>
+        body {
+            background: lightgray;
+        }
+        
         #container {
-            width: 400px;
+            width: 450px;
             font-family: 'Castoro', serif;
             color: white;
+            margin: 10px auto;
         }
         
         fieldset {
@@ -23,6 +28,7 @@
             border: 1px solid turquoise;
             margin-bottom: 10px;
             padding: 20px;
+            box-shadow: 0px 0px 0px 1px rgba(0, 0, 0, 0.01), 0px 0px 3px 2px rgba(0, 0, 0, 0.1);
         }
         
         fieldset legend {
@@ -35,15 +41,44 @@
             display: block;
         }
         
+        #container label>span {
+            float: left;
+            text-shadow: 1px 1px 1px lightgray;
+            width: 65px;
+            font-size: 13px;
+        }
+        
+        #container label .required {
+            color: red;
+            width: 10px;
+        }
+        
         #container input[type=text],
         #container input[type=email],
         #container input[type=phone],
+        #container input[type=submit],
         #container select,
         #container textarea {
             border-radius: 5px;
             border: none;
+            outline: none;
             padding: 5px 25px;
-            margin-left: 25px;
+            margin-left: 75px;
+            margin-bottom: 15px;
+        }
+        
+        #container select {
+            margin-left: 85px;
+        }
+        
+        #container input[type=submit] {
+            border-radius: 5px;
+            border: none;
+            padding: 5px 35px;
+            margin-left: 75px;
+            margin-bottom: 15px;
+            border: 1px solid turquoise;
+            background: turquoise;
         }
     </style>
 </head>
@@ -53,13 +88,13 @@
         <form action="GET">
             <fieldset>
                 <legend>Personal</legend>
-                <label for="name">Name<span>*</span></label>
+                <label for="name"><span >Name</span><span class = "required">*</span></label>
                 <input type="text" id="name" name="name">
-                <label for="email">Email <span>*</span></label>
+                <label for="email"><span >Email</span><span class = "required">*</span></label>
                 <input type="email" id="email" name="email">
-                <label for="phone">Telephone <span>*</span></label>
+                <label for="phone"><span>Telephone</span><span class = "required">*</span></label>
                 <input type="text" id="phone" name="phone" name="select">
-                <label for="purpose">Purpose</label>
+                <label for="purpose"><span >Purpose</span></label>
                 <select name="purpose" id="purpose">
                   <option value="order">Order</option>
                   <option value="interview">Interview</option>
@@ -69,7 +104,7 @@
             </fieldset>
             <fieldset>
                 <legend>Message</legend>
-                <label for="message">Message<span>*</span></label>
+                <label for="message"><span>Message</span><span span class = "required">*</span></label>
                 <textarea name="message" class="message" cols="30" rows="8"></textarea>
                 <input type="submit" value="send">
             </fieldset>
