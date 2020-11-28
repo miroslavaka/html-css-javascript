@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>canvas</title>
+    <style>
+        body {
+            background-color: pink;
+        }
+        
+        #content {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        #myCanvas {
+            border: 3px solid blue;
+            background-color: #b0c4de;
+            border-radius: 5%;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="container">
+        <div id="content">
+            <canvas id="myCanvas" width="1000" height="450"></canvas>
+        </div>
+    </div>
+    <script>
+        let c = document.getElementById("myCanvas");
+        let ctx = c.getContext("2d");
+        let w = c.width;
+        //GROUND AND SKY
+        function drawGroundAndSky() {
+            //ground
+            ctx.beginPath();
+            ctx.rect(0, 350, w, 100);
+            var grd = ctx.createLinearGradient(800, 100, 70, 100);
+            grd.addColorStop(0, "lightgreen");
+            grd.addColorStop(0.5, "lime");
+            grd.addColorStop(1, "lightseagreen");
+            ctx.fillStyle = grd;
+            ctx.fill();
+            ctx.closePath();
+            //sky
+            ctx.beginPath();
+            ctx.rect(0, 0, w, 100);
+            ctx.fillStyle = 'dodgerblue';
+            ctx.fill();
+            ctx.closePath();
+        }
+        drawGroundAndSky();
+
+        //SUN
+        function drawSunHands() {
+            var maxHands = 18;
+            for (var i = 1; i <= maxHands; i++) {
+                ctx.beginPath();
+                ctx.lineWidth = '7';
+                ctx.lineCap = "round";
+                ctx.strokeStyle = "orange";
+                ctx.moveTo(0, 0);
+                ctx.lineTo(0, 250);
+                ctx.stroke();
+                ctx.rotate(2 * Math.PI / maxHands);
+            }
+        }
+        drawSunHands();
+
+        function drawSun() {
+            ctx.beginPath();
+            ctx.arc(50, 50, 80, 0, 2 * Math.PI);
+            ctx.strokeStyle = "orange";
+            ctx.lineWidth = "15";
+            ctx.stroke();
+            var grd = ctx.createLinearGradient(0, 30, 150, 100);
+            grd.addColorStop(0, '#fffacd');
+            grd.addColorStop(0.5, '#ffd700');
+            grd.addColorStop(1, '#fffacd');
+            ctx.fillStyle = grd;
+            ctx.fill();
+        }
+        drawSun();
+
+        //HOUSE
+        function drawHouse() {
+            ctx.beginPath();
+            ctx.fillStyle = "#987654";
+            ctx.fillRect(200, 190, 250, 220);
+            ctx.lineWidth = "1";
+            ctx.strokeStyle = "#635d62";
+            ctx.strokeRect(200, 190, 250, 220);
+        }
+        drawHouse();
+
+        function drawRoof() {
+            ctx.beginPath();
+            ctx.moveTo(180, 190);
+            ctx.lineTo(480, 190);
+            ctx.lineTo(330, 50);
+            ctx.fillStyle = "#644117";
+            //ctx.fillStyle = "#635d62";
+            ctx.fill();
+        }
+        drawRoof();
+
+        function drawWindows() {
+            let x = c.width / 2;
+            let y = c.height / 2;
+            for (var i = 1; i < 3; i++) {
+                ctx.fillStyle = "skyblue";
+                ctx.fillRect(((x / 4) + (i * 120)), (y + 30), 50, 50);
+                ctx.beginPath();
+                ctx.lineWidth = "5";
+                ctx.strokeStyle = "#fff";
+                ctx.moveTo((((x / 4) + 25) + (i * 120)), (y + 30));
+                ctx.lineTo((((x / 4) + 25) + (i * 120)), (y + 80));
+                ctx.stroke();
+                ctx.beginPath();
+                ctx.strokeStyle = "#fff";
+                ctx.moveTo((x / 4) + (i * 120), (y + 55));
+                ctx.lineTo(((x / 4) + 50) + (i * 120), (y + 55));
+                ctx.stroke();
+            }
+        }
+        drawWindows();
+
+        function drawDoor() {
+            ctx.fillStyle = "saddlebrown";
+            ctx.fillRect(305, 313, 50, 90);
+        }
+        drawDoor();
+
+        function drawClouds(x, y, w, h, radius) {
+            var r = x + w;
+            var b = y + h;
+            ctx.beginPath();
+            ctx.fillStyle = "lightblue";
+            ctx.moveTo(x + radius, y);
+            ctx.lineTo(r - radius, y);
+            ctx.quadraticCurveTo(r, y, r, y + radius);
+            ctx.lineTo(r, y + h - radius);
+            ctx.quadraticCurveTo(r, b, r - radius, b);
+            ctx.lineTo(x + radius, b);
+            ctx.quadraticCurveTo(x, b, x, b - radius);
+            ctx.lineTo(x, y + radius);
+            ctx.quadraticCurveTo(x, y, x + radius, y);
+            ctx.fill();
+        }
+        drawClouds(170, 75, 120, 37, 22);
+        drawClouds(480, 85, 120, 37, 22);
+        drawClouds(340, 55, 120, 37, 22);
+
+        //CAR
+        function drawUpperPart() {
+            x = 735;
+            y = 220;
+            ctx.beginPath();
+            ctx.moveTo(x, y)
+            ctx.lineTo((x = x + 90), y);
+            ctx.lineTo((x = x + 40), (y = y + 50));
+            ctx.lineTo((x = x - 170), y);
+            ctx.lineTo((x = x + 40), (y = y - 50));
+            ctx.lineWidth = "2";
+            ctx.strokeStyle = "#000";
+            ctx.stroke();
+
+            var x = 680;
+            var y = 270;
+            ctx.beginPath();
+            ctx.moveTo(x, y)
+            ctx.lineTo((x = x + 200), y);
+            ctx.lineTo((x = x + 40), (y = y + 70));
+            ctx.lineTo((x = x - 280), y);
+            ctx.lineTo((x = x + 40), (y = y - 70));
+            ctx.lineWidth = "5";
+            ctx.strokeStyle = "#000";
+            ctx.stroke();
+            ctx.fillStyle = "crimson";
+            ctx.fill();
+        }
+        drawUpperPart();
+
+        function drawWheels() {
+            ctx.beginPath();
+            let r = 30;
+            let x = 700;
+            let y = 350
+            ctx.arc(x + 150, y, r, 0, 2 * Math.PI);
+            ctx.lineWidth = "5";
+            var grd = ctx.createRadialGradient(x + 150, y, 50, x + 150, 150, 100);
+            grd.addColorStop(0, "#000");
+            grd.addColorStop(0.5, "#fff");
+            grd.addColorStop(1, "#000");
+            ctx.strokeStyle = grd;
+            ctx.stroke();
+            ctx.fillStyle = "gray";
+            ctx.fill();
+
+            ctx.beginPath();
+            ctx.arc(700, 350, 30, 0, 2 * Math.PI);
+            ctx.lineWidth = "5";
+            var grd = ctx.createRadialGradient(x, y, 50, x, 150, 100);
+            grd.addColorStop(0, "#000");
+            grd.addColorStop(0.5, "#fff");
+            grd.addColorStop(1, "#000");
+            ctx.strokeStyle = grd;
+            ctx.stroke();
+            ctx.fillStyle = "gray";
+            ctx.fill();
+        }
+        drawWheels();
+    </script>
+</body>
+
+</html>
+
+</html>
