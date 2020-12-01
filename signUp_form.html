@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>sign up</title>
+    <style>
+        * { box-sizing: border-box; }
+        body{
+            background: lightgray;
+            
+        }
+        #form-wrapper{
+            box-shadow: 0px 0px 3px 1px rgba(0,0,0,0.2);
+            width: 400px;
+            margin: auto;
+            
+        }
+         .head h3{
+            background: lime;
+            padding: 30px;
+        }
+        .form{
+            background-color: #fff;
+            padding: 30px;
+        }
+        .form input[type=text] label,
+        .form input[type=email] label,
+        .form input[type=password] label{
+            display: block;
+            padding: 10px 0px;
+            float: left;
+            width: 80px;
+            margin: 10px;
+        }
+        .form input[type=text],
+        .form input[type=email],
+        .form input[type=password]{
+            width:  300px;
+            border: 1px solid lightgray;
+            border-radius: 10px;
+            padding: 10px;
+            margin: 5px 10px 20px 10px;
+            outline:none;
+        }
+        .form input[type=password]{
+            margin-bottom: 5px ;
+        }
+        .form  input[type=submit]{
+            display: block;
+            width:  100px;
+            border: 1px solid lightgray;
+            border-radius: 10px;
+            padding: 10px;
+            margin-top: 20px;
+            cursor: pointer;
+            outline:none;
+        }
+        .form input[type=checkbox]{  
+            margin-bottom: 15px;
+        
+        }
+        .form input[type=checkbox] label{
+        
+        }
+    </style>
+</head>
+<body>
+    <div id = "form-wrapper">
+        <div class = "head">
+            <h3>Sign up</h3>
+        </div>
+        <div class = "form">
+            <form action="">
+                <label for="name"><span>Username</span></label>
+                <input type="text" id = "username" name = "username">
+
+                <label for="email"><span>Email Address</span></label>
+                <input type="email" id = "email" name = "email">
+
+                <label for="password"><span>Password</span></label>
+                <input type="password" id = "password" name = "password">
+
+                <input type="checkbox" id = "terms" name = "terms" checked>
+                <label for="terms">I agree with <a href = "#">Terms & Conditions</a></label>
+
+                <input type="submit" value = "Sign up">
+
+            </form>
+        </div>
+    </div>
+</body>
+</html>
