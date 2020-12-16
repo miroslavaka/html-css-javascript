@@ -10,15 +10,17 @@
 </head>
 <style>
     body {
-        margin: 0;
+        margin: auto;
+        background: #fadadd;
+        box-sizing: border-box;
     }
     
     #main {
         width: 100%;
-        background: mistyrose;
         text-align: center;
-        line-height: 1.5;
+        line-height: 1.8;
         font-family: 'Lora', serif;
+        margin: auto;
     }
     
     @media(max-width:460px) {
@@ -27,66 +29,130 @@
         }
     }
     
-    h1 {
-        font-family: 'Satisfy', cursive;
-        font-size: 3em;
-        margin: 0;
+    #main-div {
+        border: 4px dotted white;
+        background: mistyrose;
+        margin: 70px 140px;
+        border-radius: 10px;
     }
     
-    @media(max-width: 460px) {
+    h1 {
+        font-family: 'Lora', serif;
+        font-size: 4em;
+        margin: 0;
+        padding-top: 15px;
+        color: white;
+        /*background-image: linear-gradient(-90deg, #ff9a9e 0%, #fad0c4 99%, #fad0c4 100%);*/
+        text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.2);
+    }
+    
+    @media(max-width:460px) {
         h1 {
             font-size: 2.5em;
         }
     }
     
-    img {
-        width: 40%;
-        background: white;
-        padding: 20px;
-        margin: auto;
-        display: block;
+    #main-div p {
+        font-size: 1.3em;
+        margin: 0;
+        margin-bottom: 0px;
+        margin-top: -10px;
     }
     
-    @media(max-width:680px) {
+    #img-div {
+        /*border: 3px dashed white;*/
+        border-radius: 10px;
+        width: 55%;
+        margin: auto;
+        padding-top: 25px;
+    }
+    
+    img {
+        width: 100%;
+        border-radius: 10px;
+        box-shadow: 0px 0px 0px 1px rgba(0, 0, 0, 0.01), 0px 0px 1px 2px rgba(0, 0, 0, 0.05);
+    }
+    
+    @media(max-width: 680px) {
         img {
             width: 55%;
             padding: 15px;
         }
     }
     
-    ul {
+    figcaption {
+        padding-bottom: 5px;
+        margin-bottom: 55px;
+    }
+    
+    #tribute-info p {
         text-align: left;
+        padding: 25px 0 0 50px;
+        margin: -25px 20px 0 20px;
+    }
+    
+    #tribute-info ul {
+        border-bottom: 1.5px solid white;
+        text-align: left;
+        padding: 15px 50px 25px 50px;
+        margin: 0px 50px;
+    }
+    
+    blockquote {
+        font-size: 0.8em;
+        border: none;
+    }
+    
+    #link {
+        padding-bottom: 15px;
+        font-size: 1.2em;
+    }
+    
+    #tribute-link {
+        color: #cc8899;
+        text-decoration: none;
+    }
+    
+    #tribute-link:hover {
+        color: #db7093;
     }
 </style>
 
 <body>
     <main id="main">
-        <h1 id="title">Ada Lovelace</h1>
-        <p>English mathematician and writer</p>
-        <div id="img-div">
-            <figure>
-                <img id="image" src="https://upload.wikimedia.org/wikipedia/commons/d/de/Ada_Lovelace_child_portrait_Somerville_College.jpg" alt="colorful portrait of Ada Lovelace at the age of seven">
-                <figcaption id="img-caption">Ada Lovelace at the age of seven</figcaption>
-            </figure>
+        <div id="main-div">
+            <h1 id="title">Ada Lovelace</h1>
+            <p>English mathematician</p>
+            <div id="img-div">
+                <figure>
+                    <img id="image" src="https://upload.wikimedia.org/wikipedia/commons/d/de/Ada_Lovelace_child_portrait_Somerville_College.jpg" alt="colorful portrait of Ada Lovelace at the age of seven">
+                    <figcaption id="img-caption">Ada Lovelace at the age of seven</figcaption>
+                </figure>
+            </div>
+            <div id="tribute-info">
+                <p><strong> Timeline of Ada's life :</strong></p>
+                <ul>
+                    <li><strong>1815</strong> - born in London, England</li>
+                    <li><strong>at the age of 8</strong> - experienced headaches that obscured her vision</li>
+                    <li><strong>1829</strong> - paralyzed after a bout of measles</li>
+                    <li><strong>by 1931</strong> - able to walk with crutches, developed her mathematical and technological skills</li>
+                    <li><strong>from 1932</strong> - her mathematical abilities began to emerge, and her interest in mathematics dominated the majority of her adult life</li>
+                    <li><strong>1835</strong> - married William, 8th Baron King</li>
+                    <li><strong>1838</strong> - became the Countess of Lovelace</li>
+                    <li><strong>1842-43</strong> - translated the Italian mathematician Luigi Menabrea's article on Babbage's newest proposed machine, the Analytical Engine. With the article, she appended a set of notes. The notes are around three times longer
+                        than the article itself and include complete detail, a method for calculating a sequence of Bernoulli numbers using the Analytical Engine</li>
+                    <li><strong>1844</strong> - commented to a friend Woronzow Greig about her desire to create a mathematical model for how the brain gives rise to thoughts and nerves to feelings</li>
+                    <li><strong>1851</strong> - ambitious attempt to create a mathematical model</li>
+                    <li><strong>1852</strong> - died from cancer</li>
+                </ul>
+                <blockquote>
+                    <p>Lovelace believed that intuition and imagination were critical to effectively applying mathematical and scientific concepts. She valued metaphysics as much as mathematics, viewing both as tools for exploring "the unseen worlds around
+                        us"
+                    </p>
+                </blockquote>
+                <div id="link">More information about Ada's life and work is in her <a id="tribute-link" href="https://en.wikipedia.org/wiki/Ada_Lovelace" target="_blank">Wikipedia article.</a></div>
+            </div>
         </div>
-        <section>
-            <ul>
-                <li><strong>1815</strong> - born in London, England</li>
-                <li><strong>at the age of 8</strong> - she experienced headaches that obscured her visio</li>
-                <li><strong>1829</strong> - she was paralyzed after a bout of measles</li>
-                <li><strong>by 1931</strong> - she was able to walk with crutches. Despite the illnesses, she developed her mathematical and technological skills</li>
-                <li><strong>from 1932</strong> - when she was seventeen, her mathematical abilities began to emerge, and her interest in mathematics dominated the majority of her adult life</li>
-                <li><strong>1835</strong> - she married William, 8th Baron King</li>
-                <li><strong>1838</strong> - she became the Countess of Lovelace, Ada was a descendant of the extinct Barons Lovelace and her husband was made Earl of Lovelace</li>
-                <li><strong>1842-43</strong> - she translated the Italian mathematician Luigi Menabrea's article on Babbage's newest proposed machine, the Analytical Engine. With the article, she appended a set of notes.The notes are around three times longer
-                    than the article itself and include n complete detail, a method for calculating a sequence of Bernoulli numbers using the Analytical Engine</li>
-                <li><strong>1844</strong> - she commented to a friend Woronzow Greig about her desire to create a mathematical model for how the brain gives rise to thoughts and nerves to feelings</li>
-                <li><strong>1851</strong> - ambitious attempt to create a mathematical model for successful large bets</li>
-            </ul>
-
-            <p>Lovelace believed that intuition and imagination were critical to effectively applying mathematical and scientific concepts. She valued metaphysics as much as mathematics, viewing both as tools for exploring "the unseen worlds around us"</p>
-            <p>More information about Ada´s life and work is in her <a href="https://en.wikipedia.org/wiki/Ada_Lovelace" target="_blank">Wikipedia article.</a></p>
-        </section>
     </main>
 </body>
 
