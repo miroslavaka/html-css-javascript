@@ -25,15 +25,21 @@
     
     @media(max-width:460px) {
         #main {
-            font-size: 0.9em;
+            font-size: 0.8em;
         }
     }
     
     #main-div {
         border: 4px dotted white;
         background: mistyrose;
-        margin: 70px 140px;
+        margin: 50px 70px;
         border-radius: 10px;
+    }
+    
+    @media(max-width:460px) {
+        #main-div {
+            margin: 40px;
+        }
     }
     
     h1 {
@@ -42,13 +48,18 @@
         margin: 0;
         padding-top: 15px;
         color: white;
-        /*background-image: linear-gradient(-90deg, #ff9a9e 0%, #fad0c4 99%, #fad0c4 100%);*/
         text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.2);
+    }
+    
+    @media(max-width:680px) {
+        h1 {
+            font-size: 3em;
+        }
     }
     
     @media(max-width:460px) {
         h1 {
-            font-size: 2.5em;
+            font-size: 3em;
         }
     }
     
@@ -60,11 +71,24 @@
     }
     
     #img-div {
-        /*border: 3px dashed white;*/
         border-radius: 10px;
-        width: 55%;
+        width: 60%;
         margin: auto;
-        padding-top: 25px;
+        padding-top: 10px;
+    }
+    
+    @media(max-width: 680px) {
+        #img-div {
+            width: 100%;
+            padding: 0;
+        }
+    }
+    
+    @media(max-width: 460px) {
+        #img-div {
+            width: 100%;
+            padding: 0;
+        }
     }
     
     img {
@@ -73,16 +97,8 @@
         box-shadow: 0px 0px 0px 1px rgba(0, 0, 0, 0.01), 0px 0px 1px 2px rgba(0, 0, 0, 0.05);
     }
     
-    @media(max-width: 680px) {
-        img {
-            width: 55%;
-            padding: 15px;
-        }
-    }
-    
     figcaption {
-        padding-bottom: 5px;
-        margin-bottom: 55px;
+        margin-bottom: 3em;
     }
     
     #tribute-info p {
@@ -91,16 +107,50 @@
         margin: -25px 20px 0 20px;
     }
     
+    @media(max-width: 460px) {
+        #tribute-info p {
+            padding: 10px 0 0 20px;
+        }
+    }
+    
     #tribute-info ul {
         border-bottom: 1.5px solid white;
         text-align: left;
         padding: 15px 50px 25px 50px;
-        margin: 0px 50px;
+        margin: 0 50px;
+    }
+    
+    @media(max-width: 680px) {
+        #tribute-info ul {
+            font-size: 0.9em;
+            margin: 0 10px;
+        }
+    }
+    
+    @media(max-width: 460px) {
+        #tribute-info ul {
+            padding: 5px;
+            margin: 0 10px;
+        }
     }
     
     blockquote {
         font-size: 0.8em;
         border: none;
+    }
+    
+    @media(max-width: 680px) {
+        blockquote {
+            font-size: 0.8em;
+            margin: 10px 0 15px -15px;
+        }
+    }
+    
+    @media(max-width: 460px) {
+        blockquote {
+            font-size: 0.7em;
+            margin: 25px 0 15px -15px;
+        }
     }
     
     #link {
