@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        
+        body {
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        input {
+            -webkit-appearance: none;
+            width: 200px;
+            height: 100px;
+            border-radius: 50px;
+            border: 2px solid lightseagreen;
+        }
+        
+        input:before {
+            content: " ";
+            height: 100px;
+            width: 100px;
+            position: absolute;
+            top: 43%;
+            background-image: linear-gradient(to right, lightseagreen, cyan);
+            border-radius: 50px;
+            transition: ease-in-out .9s;
+        }
+        
+        input:checked {
+            border: 2px solid lightseagreen;
+        }
+        
+        input:checked:before {
+            transform: translate(100%);
+            background-image: linear-gradient(to right, cyan, lightseagreen);
+        }
+    </style>
+
+</head>
+
+<body>
+    <input type="checkbox">
+
+</body>
+
+</html>
