@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personal portfolio webpage</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+        
+        body {
+            background: gray;
+        }
+        
+        #navbar {
+            background: lime;
+            font-size: 1.5em;
+            box-shadow: 0px 0px 2px 2px rgba(0, 0, 0, 0.05);
+        }
+        
+        #navbar ul {
+            background: rgb(245, 102, 126);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 10px 0;
+        }
+        
+        #navbar ul li {
+            padding: 10px;
+            list-style: none;
+        }
+        
+        #navbar ul li a {
+            text-decoration: none;
+            color: black;
+        }
+        
+        #projects {}
+    </style>
+</head>
+
+<body>
+    <!--NAVIGATION-->
+    <nav id="navbar">
+        <ul>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Work</a></li>
+            <li><a href="#">Contact</a></li>
+        </ul>
+    </nav>
+    <!--WELCOME-->
+    <section id="welcome-section">
+        <h1>Welcome</h1>
+    </section>
+    <!--PROJECTS-->
+    <section id="projects">
+        <h2>My projects:</h2>
+        <div class="grid">
+            <a href="https://codepen.io/miraka/pen/ZEpeVQo" class="project-tile">
+                <img src="AdaLovelace.jpg" width="500" alt="">
+            </a>
+            <a href="https://codepen.io/miraka/pen/dypRNPV" class="project-tile">
+                <img src="SurveyForm1.jpg" width="500" alt="">
+            </a>
+            <a href="https://codepen.io/miraka/pen/ZEpeVQo" class="project-tile">
+                <img src="TechnicalDocumentation2.jpg" width="500" alt="">
+            </a>
+        </div>
+    </section>
+</body>
+
+</html>
