@@ -4,21 +4,31 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <title>Personal portfolio webpage</title>
     <style>
+        @import url('https://fonts.googleapis.com/css2?family=Lora&display=swap');
         * {
             padding: 0;
             margin: 0;
         }
         
         body {
-            background: gray;
+            background-image: linear-gradient(to top, #30cfd0 0%, #330867 100%);
+            font-family: 'Lora', serif;
         }
         
         #navbar {
-            background: lime;
             font-size: 1.5em;
             box-shadow: 0px 0px 2px 2px rgba(0, 0, 0, 0.05);
+            position: fixed;
+            width: 100%;
+        }
+        
+        @media (max-width: 480px) {
+            #navbar {
+                font-size: 90%;
+            }
         }
         
         #navbar ul {
@@ -36,10 +46,78 @@
         
         #navbar ul li a {
             text-decoration: none;
-            color: black;
+            color: midnightblue;
         }
         
-        #projects {}
+        #navbar ul li a:hover {
+            border-bottom: 1px solid midnightblue;
+        }
+        
+        #welcome-section {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        #welcome-section h1 {
+            color: white;
+            text-align: center;
+            font-size: 4em;
+            text-shadow: 0px 0px 2px 2px rgba(0, 0, 0, 0.05);
+        }
+        
+        #welcome-section h3 {
+            text-align: center;
+            color: rgb(245, 102, 126);
+            font-size: 2em;
+            text-shadow: 0px 1px 2px 2px rgba(0, 0, 0, 0.5);
+        }
+        
+        @media (max-width: 480px) {
+            #welcome-section {
+                font-size: 80%;
+            }
+        }
+        
+        #projects {
+            text-align: center;
+        }
+        
+        #projects h2 {
+            padding: 30px 0;
+            color: white;
+            margin: auto;
+        }
+        
+        @media (max-width: 480px) {
+            #projects h2 {
+                width: 80%;
+            }
+        }
+        
+        #projects img {
+            padding: 20px;
+        }
+        
+        @media (max-width: 480px) {
+            #projects img {
+                width: 80%;
+            }
+        }
+        
+        #profile-link {
+            color: white;
+            text-align: center;
+            padding-top: 20px;
+        }
+        
+        #profile-link i {
+            color: white;
+            padding: 20px 10px;
+            font-size: 35px;
+        }
     </style>
 </head>
 
@@ -47,29 +125,40 @@
     <!--NAVIGATION-->
     <nav id="navbar">
         <ul>
-            <li><a href="#">About</a></li>
-            <li><a href="#">Work</a></li>
-            <li><a href="#">Contact</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#projects">Work</a></li>
+            <li><a href="#contact">Contact</a></li>
         </ul>
     </nav>
     <!--WELCOME-->
     <section id="welcome-section">
-        <h1>Welcome</h1>
+        <h1>Welcome, I am Mira</h1>
+        <h3>self-studying web development</h3>
+    </section>
+    <!--ABOUT-->
+    <section id="about">
+
     </section>
     <!--PROJECTS-->
     <section id="projects">
         <h2>My projects:</h2>
         <div class="grid">
             <a href="https://codepen.io/miraka/pen/ZEpeVQo" class="project-tile">
-                <img src="AdaLovelace.jpg" width="500" alt="">
+                <img src="https://1.bp.blogspot.com/-_7ELMa6oHBc/X-jdL2FIq1I/AAAAAAAAK44/bsXbPcliJJcsiD8U8t4_8D5e0eldZwzwgCLcBGAsYHQ/s1096/AdaLovelace.jpg" target="_blank" width="400" alt="ling to tribute page">
             </a>
             <a href="https://codepen.io/miraka/pen/dypRNPV" class="project-tile">
-                <img src="SurveyForm1.jpg" width="500" alt="">
+                <img src="https://1.bp.blogspot.com/-yAuoeoqYdjw/X-jdVP8gOFI/AAAAAAAAK48/3k6RPM72VvU7ysX3XRqdbMLY9vK74w2IwCLcBGAsYHQ/s1033/SurveyForm1.jpg" target="_blank" width="400" alt="link to survey form">
             </a>
             <a href="https://codepen.io/miraka/pen/ZEpeVQo" class="project-tile">
-                <img src="TechnicalDocumentation2.jpg" width="500" alt="">
+                <img src="https://1.bp.blogspot.com/-6r8HVpPm53o/X-jdbj2CfEI/AAAAAAAAK5E/5zTerN-Dr18dSfPodeSRvA4BrrwiRU5_QCLcBGAsYHQ/s1173/TechnicalDocumentation2.jpg" target="_blank" width="400" alt="link to technical documentation page">
             </a>
         </div>
+    </section>
+    <!--CONTACT-->
+    <section id="profile-link">
+        <h1>Let's work together:</h1>
+        <a href="https://github.com/miroslavaka" target="_blank"><i class="fa fa-github"></i></a>
+        <a href="https://twitter.com/mirra_ka" target="_blank"><i class="fa fa-twitter"></i></a>
     </section>
 </body>
 
