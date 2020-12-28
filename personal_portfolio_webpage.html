@@ -16,6 +16,7 @@
         body {
             background-image: linear-gradient(to top, #30cfd0 0%, #330867 100%);
             font-family: 'Lora', serif;
+            box-sizing: border-box;
         }
         
         #navbar {
@@ -77,7 +78,20 @@
         
         @media (max-width: 480px) {
             #welcome-section {
-                font-size: 80%;
+                font-size: 75%;
+            }
+        }
+        
+        .grid {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        @media (max-width: 680px) {
+            .grid {
+                display: flex;
+                flex-direction: column;
             }
         }
         
@@ -97,14 +111,42 @@
             }
         }
         
-        #projects img {
-            padding: 20px;
+        #projects a {
+            text-decoration: none;
+            padding: 0 15px;
         }
         
-        @media (max-width: 480px) {
-            #projects img {
-                width: 80%;
+        #projects img {
+            padding: 20px 0 0 0;
+            margin-bottom: 25px;
+            width: 350px;
+        }
+        
+        #projects p {
+            padding: 0px 5px 25px 5px;
+            margin: -29px auto 15px auto;
+            background: steelblue;
+            color: white;
+            width: 350px;
+            align-items: center;
+            box-sizing: border-box;
+        }
+        
+        @media (max-width: 880px) {
+            #projects p {
+                font-size: 90%;
             }
+        }
+        
+        .btn-all-projects {
+            background: steelblue;
+            border-radius: 3px;
+            color: midnightblue;
+        }
+        
+        .btn-all-projects i {
+            color: midnightblue;
+            padding-left: 5px;
         }
         
         #profile-link {
@@ -144,15 +186,19 @@
         <h2>My projects:</h2>
         <div class="grid">
             <a href="https://codepen.io/miraka/pen/ZEpeVQo" class="project-tile">
-                <img src="https://1.bp.blogspot.com/-_7ELMa6oHBc/X-jdL2FIq1I/AAAAAAAAK44/bsXbPcliJJcsiD8U8t4_8D5e0eldZwzwgCLcBGAsYHQ/s1096/AdaLovelace.jpg" target="_blank" width="400" alt="ling to tribute page">
+                <img src="https://1.bp.blogspot.com/-_7ELMa6oHBc/X-jdL2FIq1I/AAAAAAAAK44/bsXbPcliJJcsiD8U8t4_8D5e0eldZwzwgCLcBGAsYHQ/s1096/AdaLovelace.jpg" target="_blank" alt="ling to tribute page">
+                <p><span class="code">&lt;</span>Tribute Page<span class="code">&#47;&gt;</span></p>
             </a>
             <a href="https://codepen.io/miraka/pen/dypRNPV" class="project-tile">
-                <img src="https://1.bp.blogspot.com/-yAuoeoqYdjw/X-jdVP8gOFI/AAAAAAAAK48/3k6RPM72VvU7ysX3XRqdbMLY9vK74w2IwCLcBGAsYHQ/s1033/SurveyForm1.jpg" target="_blank" width="400" alt="link to survey form">
+                <img src="https://1.bp.blogspot.com/-yAuoeoqYdjw/X-jdVP8gOFI/AAAAAAAAK48/3k6RPM72VvU7ysX3XRqdbMLY9vK74w2IwCLcBGAsYHQ/s1033/SurveyForm1.jpg" target="_blank" alt="link to survey form">
+                <p><span class="code">&lt;</span>Survey Form<span class="code">&#47;&gt;</span></p>
             </a>
             <a href="https://codepen.io/miraka/pen/ZEpeVQo" class="project-tile">
-                <img src="https://1.bp.blogspot.com/-6r8HVpPm53o/X-jdbj2CfEI/AAAAAAAAK5E/5zTerN-Dr18dSfPodeSRvA4BrrwiRU5_QCLcBGAsYHQ/s1173/TechnicalDocumentation2.jpg" target="_blank" width="400" alt="link to technical documentation page">
+                <img src="https://1.bp.blogspot.com/-6r8HVpPm53o/X-jdbj2CfEI/AAAAAAAAK5E/5zTerN-Dr18dSfPodeSRvA4BrrwiRU5_QCLcBGAsYHQ/s1173/TechnicalDocumentation2.jpg" target="_blank" alt="link to technical documentation page">
+                <p><span class="code">&lt;</span>Technical Documentation Page<span class="code">&#47;&gt;</span></p>
             </a>
         </div>
+        <a href="https://codepen.io/miraka/pens/public" target="_blank" class="btn-all-projects">All projects<i class="fa fa-caret-right"></i></a>
     </section>
     <!--CONTACT-->
     <section id="profile-link">
