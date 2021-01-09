@@ -1,93 +1,142 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css?family=Raleway:400,700" rel="stylesheet">
     <title>sign up</title>
     <style>
-        * { box-sizing: border-box; }
-        body{
-            background: lightgray;
-            
+        * {
+            box-sizing: border-box;
+            font-family: 'Raleway', sans-serif;
         }
-        #form-wrapper{
-            box-shadow: 0px 0px 3px 1px rgba(0,0,0,0.2);
+        
+        body {
+            height: 100vh;
+            background-image: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+        }
+        
+        .signin {
+            padding-top: 0;
+            margin: 0 0 25px 0;
+        }
+        
+        .signin a {
+            color: #a9a9a9;
+        }
+        
+        #form-wrapper {
+            box-shadow: 0px 0px 3px 1px rgba(0, 0, 0, 0.2);
             width: 400px;
             margin: auto;
-            
         }
-         .head h3{
-            background: lime;
+        
+        .head h3 {
+            background: #a8edea;
             padding: 30px;
+            text-align: center;
+            margin-bottom: 0;
+            color: #757575;
         }
-        .form{
+        
+        .form {
             background-color: #fff;
             padding: 30px;
         }
+        
         .form input[type=text] label,
         .form input[type=email] label,
-        .form input[type=password] label{
+        .form input[type=password] label {
             display: block;
             padding: 10px 0px;
             float: left;
             width: 80px;
             margin: 10px;
         }
+        
         .form input[type=text],
         .form input[type=email],
-        .form input[type=password]{
-            width:  300px;
+        .form input[type=password] {
+            width: 300px;
             border: 1px solid lightgray;
             border-radius: 10px;
             padding: 10px;
             margin: 5px 10px 20px 10px;
-            outline:none;
+            outline: none;
         }
-        .form input[type=password]{
-            margin-bottom: 5px ;
+        
+        .form input[type=password] {
+            margin-bottom: 5px;
         }
-        .form  input[type=submit]{
+        
+        .form input[type=submit] {
             display: block;
-            width:  100px;
-            border: 1px solid lightgray;
+            width: 100px;
+            border: 1px solid #a8edea;
             border-radius: 10px;
             padding: 10px;
+            margin: auto;
             margin-top: 20px;
             cursor: pointer;
-            outline:none;
+            outline: none;
+            background: #a8edea;
         }
-        .form input[type=checkbox]{  
-            margin-bottom: 15px;
         
+        .form input[type=checkbox] {
+            appearance: none;
+            margin: 5px;
+            padding: 8px;
+            background-color: #a8edea;
+            cursor: pointer;
+            outline: none;
+            border-radius: 2px;
+            position: relative;
+            display: inline-block;
         }
-        .form input[type=checkbox] label{
         
+        .form input[type=checkbox]:checked:after {
+            content: '\2714';
+            position: absolute;
+            top: -1px;
+            left: 3px;
+            color: #000;
+        }
+        
+        #termsandcond {
+            color: #a9a9a9;
         }
     </style>
 </head>
+
 <body>
-    <div id = "form-wrapper">
-        <div class = "head">
-            <h3>Sign up</h3>
+    <div id="form-wrapper">
+        <div class="head">
+            <h3>Sign up for...</h3>
         </div>
-        <div class = "form">
+        <div class="form">
+            <p class="signin">Already have an account?<a href="#"> Sign in</a></p>
             <form action="">
                 <label for="name"><span>Username</span></label>
-                <input type="text" id = "username" name = "username">
+                <input type="text" id="username" name="username" placeholder="Name">
 
                 <label for="email"><span>Email Address</span></label>
-                <input type="email" id = "email" name = "email">
+                <input type="email" id="email" name="email" placeholder="someone@example.com">
 
                 <label for="password"><span>Password</span></label>
-                <input type="password" id = "password" name = "password">
+                <input type="password" id="password" name="password" placeholder="******">
 
-                <input type="checkbox" id = "terms" name = "terms" checked>
-                <label for="terms">I agree with <a href = "#">Terms & Conditions</a></label>
+                <label for="repeat"><span>Repeat Password</span></label>
+                <input type="password" id="repeat" name="password" placeholder="******">
 
-                <input type="submit" value = "Sign up">
+                <input type="checkbox" id="terms" name="terms" checked>
+                <label for="terms">I agree with <a id = "termsandcond" href = "#">Terms & Conditions</a></label>
+
+                <input type="submit" value="Sign up">
 
             </form>
         </div>
     </div>
 </body>
+
 </html>
