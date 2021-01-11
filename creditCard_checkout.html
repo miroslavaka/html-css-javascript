@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Daily UI Credit Card check out</title>
+</head>
+<style>
+    body {
+        background-image: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    }
+    
+    .form-wrapper {
+        margin: auto;
+        box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.02);
+        width: 20%;
+        text-align: center;
+    }
+    
+    .head {
+        background: lightcoral;
+        color: whitesmoke;
+    }
+    
+    .form {
+        background: white;
+        padding: 30px;
+    }
+    
+    .form input[type=text] label,
+    .form input[type=number] label {
+        display: block;
+    }
+    
+    .form select label {
+        display: block;
+    }
+    
+    .form input[type=text],
+    .form input[type=number] {
+        display: block;
+        width: 200px;
+        margin: auto;
+        margin-bottom: 20px;
+        margin-top: 5px;
+    }
+    
+    .form select {
+        display: inline-block;
+        margin-bottom: 20px;
+        margin-top: 5px;
+        /*margin-right: 20px;*/
+    }
+    
+    .form input[type=submit] {
+        border: 3px solid lightcoral;
+        border-radius: 25px;
+        padding: 7px 15px;
+        background: none;
+        color: lightcoral;
+        /*float: right;*/
+    }
+    
+    .form input[type=submit]:hover {
+        border: 3px solid lightcoral;
+        background: lightcoral;
+        color: white;
+    }
+    
+    .options {
+        display: flex;
+        justify-content: center;
+    }
+</style>
+
+<body>
+    <div class="form-wrapper">
+        <div class="head">
+            <h2>Checkout</h2>
+            <p><span>Total: </span><span>50.00Eur</span>
+            </p>
+        </div>
+        <div class="form">
+            <form action="">
+                <h1>Payment</h1>
+
+                <label for="">Name on card:</label>
+                <input type="text">
+
+                <label for="">Card number:</label>
+                <input type="number">
+
+
+                <label for="">Expiration Date:</label>
+                <div class="options">
+                    <select name="" id="">
+                    <option value="Jan">01</option>
+                    <option value="Feb">02</option>
+                    <option value="Mar">03</option>
+                    <option value="Apr">04</option>
+                    <option value="May">05</option>
+                    <option value="Jun">06</option>
+                    <option value="Jul">07</option>
+                    <option value="Aug">08</option>
+                    <option value="Sep">09</option>
+                    <option value="Oct">10</option>
+                    <option value="Nov">11</option>
+                    <option value="Dec">12</option>
+                    </select>
+
+                    <select name="" id="">
+                    <option value="2021">2021</option>
+                    <option value="2022">2022</option>
+                    <option value="2023">2023</option>
+                    <option value="2024">2024</option>
+                    <option value="2025">2025</option>
+                    <option value="2026">2026</option>
+                    <option value="2027">2027</option>
+                    <option value="2028">2028</option>
+                    <option value="2029">2029</option>
+                    <option value="2030">2030</option>
+                    </select>
+                </div>
+
+                <label for="">CVV:</label>
+                <input type="text" style="width: 85px;">
+
+                <input type="submit" id="button" value="CONFIRM">
+            </form>
+        </div>
+    </div>
+</body>
+
+</html>
