@@ -6,27 +6,131 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Settings</title>
     <style>
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+        body {
+            font-family: 'Montserrat', sans-serif;
+        }
+        
         .wrapper {
             width: 600px;
             height: 350px;
             box-shadow: 1px 4px 6px rgba(0, 0, 0, 0.5);
             margin: auto;
             border-radius: 20px;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
         }
         
         .left {
+            position: relative;
             width: 50%;
             height: 100%;
-            background: lime;
+            background: black;
             border-radius: 20px 0 0 20px;
         }
+        
+        .text {
+            position: absolute;
+            top: 35%;
+            left: 70px;
+            color: white;
+            font-size: 5.5em;
+        }
+        
+        .right {
+            position: relative;
+            float: right;
+            width: 50%;
+            height: 100%;
+        }
+        
+        .color {
+            position: absolute;
+            bottom: 143%;
+            left: 70px;
+        }
+        
+        .color input[type=radio] {
+            position: absolute;
+            display: none;
+            top: 20px;
+        }
+        
+        .check {
+            display: inline-block;
+            border: 1px solid grey;
+            border-radius: 50%;
+            height: 20px;
+            width: 20px;
+            cursor: pointer;
+            z-index: 1;
+        }
+        
+        #white~.check {
+            background: white;
+        }
+        
+        #cyan~.check {
+            background: cyan;
+        }
+        
+        #red~.check {
+            background: red;
+        }
+        
+        #yellow~.check {
+            background: yellow;
+        }
+        
+        #green~.check {
+            background: green;
+        }
     </style>
+    <script>
+        function changewhite() {
+            document.getElementById("abc").style.color = "white";
+        }
+
+        function changecyan() {
+            document.getElementById("abc").style.color = "cyan";
+        }
+
+        function changered() {
+            document.getElementById("abc").style.color = "red";
+        }
+
+        function changeyellow() {
+            document.getElementById("abc").style.color = "yellow";
+        }
+
+        function changegreen() {
+            document.getElementById("abc").style.color = "green";
+        }
+    </script>
 </head>
 
 <body>
     <div class="wrapper">
-        <div class="left"></div>
-        <div class="right"></div>
+        <div class="left">
+            <div class="text" id="abc">Abc</div>
+        </div>
+        <div class="right">
+            <div class="color">
+                <h3>Color</h3>
+                <input type="radio" id="white" checked>
+                <div class="check" onclick="changewhite();"></div>
+                <input type="radio" id="cyan">
+                <div class="check" onclick="changecyan();"></div>
+                <input type="radio" id="red">
+                <div class="check" onclick="changered();"></div>
+                <input type="radio" id="yellow">
+                <div class="check" onclick="changeyellow();"></div>
+                <input type="radio" id="green">
+                <div class="check" onclick="changegreen();"></div>
+            </div>
+        </div>
     </div>
 </body>
 
