@@ -68,45 +68,41 @@
             z-index: 1;
         }
         
-        #white~.check {
+        #white {
             background: white;
         }
         
-        #cyan~.check {
+        #cyan {
             background: cyan;
         }
         
-        #red~.check {
+        #red {
             background: red;
         }
         
-        #yellow~.check {
+        #yellow {
             background: yellow;
         }
         
-        #green~.check {
+        #green {
             background: green;
         }
     </style>
     <script>
-        function changewhite() {
-            document.getElementById("abc").style.color = "white";
-        }
+        var arr = ['white', 'cyan', 'red', 'yellow', 'green'];
 
-        function changecyan() {
-            document.getElementById("abc").style.color = "cyan";
-        }
-
-        function changered() {
-            document.getElementById("abc").style.color = "red";
-        }
-
-        function changeyellow() {
-            document.getElementById("abc").style.color = "yellow";
-        }
-
-        function changegreen() {
-            document.getElementById("abc").style.color = "green";
+        function change(t) {
+            if (t.attributes.id.value === "white") {
+                document.getElementById("abc").style.color = arr[0];
+            } else if (t.attributes.id.value === "cyan") {
+                document.getElementById("abc").style.color = arr[1];
+            } else if (t.attributes.id.value === "red") {
+                document.getElementById("abc").style.color = arr[2];
+            } else if (t.attributes.id.value === "yellow") {
+                document.getElementById("abc").style.color = arr[3];
+            } else {
+                document.getElementById("abc").style.color = arr[4];
+            }
         }
     </script>
 </head>
@@ -119,16 +115,11 @@
         <div class="right">
             <div class="color">
                 <h3>Color</h3>
-                <input type="radio" id="white" checked>
-                <div class="check" onclick="changewhite();"></div>
-                <input type="radio" id="cyan">
-                <div class="check" onclick="changecyan();"></div>
-                <input type="radio" id="red">
-                <div class="check" onclick="changered();"></div>
-                <input type="radio" id="yellow">
-                <div class="check" onclick="changeyellow();"></div>
-                <input type="radio" id="green">
-                <div class="check" onclick="changegreen();"></div>
+                <div id="white" class="check" onclick="change(this);"></div>
+                <div id="cyan" class="check" onclick="change(this);"></div>
+                <div id="red" class="check" onclick="change(this); "></div>
+                <div id="yellow" class="check" onclick="change(this);"></div>
+                <div id="green" class="check" onclick=" change(this);"></div>
             </div>
         </div>
     </div>
