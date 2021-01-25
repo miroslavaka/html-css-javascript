@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>404 page</title>
+    <style>
+        h1 {
+            text-align: center;
+        }
+        
+        h2 {
+            text-align: center;
+        }
+        
+        .diagram {
+            width: 250px;
+            height: 250px;
+            margin: 150px auto;
+            display: flex;
+            justify-content: center;
+            position: relative;
+            font-size: 1.5em;
+            text-transform: uppercase;
+            color: white;
+        }
+        
+        .blue {
+            width: 100%;
+            height: 100%;
+            background: dodgerblue;
+            border-radius: 50%;
+            position: absolute;
+            right: 30%;
+            opacity: .6;
+            animation: floatblue 2s ease-out infinite;
+        }
+        
+        @keyframes floatblue {
+            50% {
+                transform: translateX(10px);
+            }
+        }
+        
+        .green {
+            width: 100%;
+            height: 100%;
+            background: yellowgreen;
+            border-radius: 50%;
+            position: absolute;
+            left: 30%;
+            opacity: .6;
+            z-index: 1;
+            animation: floatgreen 2s ease-out infinite;
+        }
+        
+        @keyframes floatgreen {
+            50% {
+                transform: translateX(-10px);
+            }
+        }
+        
+        .blue p {
+            position: absolute;
+            top: 37%;
+            right: 55%;
+        }
+        
+        .greenblue {
+            z-index: 2;
+            margin: 90px auto;
+        }
+        
+        .green p {
+            position: absolute;
+            top: 37%;
+            left: 55%;
+            z-index: 1;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="wrapper">
+
+        <div class="content">
+            <h1>error 404</h1>
+
+        </div>
+        <div class="diagram">
+            <div class="blue">
+                <p>Page</p>
+            </div>
+            <span class="greenblue"><p>not</p></span>
+
+
+            <div class="green">
+                <p>found</p>
+            </div>
+        </div>
+
+    </div>
+</body>
+
+</html>
