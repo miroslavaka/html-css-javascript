@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <title>Tutorial 51 - styling forms</title>
+    <style>
+        fieldset {
+            width: 300px;
+            background-color: #81d4fa;
+        }
+        
+        fieldset legend {
+            font-weight: bold;
+            padding-top: 20px;
+        }
+        
+        .personal_info label {
+            float: left;
+            width: 100px;
+            text-align: right;
+            margin-right: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <form action="" method="get">
+        <fieldset class="personal_info">
+            <legend>Personal info:</legend>
+            <p>
+                <label for="first name">first name:</label>
+                <input type="text" name="first_name" id="first name">
+            </p>
+            <p>
+                <label for="last name">last name:</label>
+                <input type="text" name="last_name" id="last name">
+            </p>
+            <p>
+                <label for="email">email:</label>
+                <input type="text" name="email" id="email">
+            </p>
+            <p>
+                <label for="address line 1">address line 1:</label>
+                <input type="text" name="address line 1" id="address line 1">
+            </p>
+            <p>
+                <label for="address line 2">address line 2:</label>
+                <input type="text" name="address line 2" id="address line 2">
+            </p>
+        </fieldset>
+        <br>
+
+        <fieldset>
+            <legend>Hobbies:</legend><br>
+            <label for="sport">sport</label>
+            <input type="checkbox" value="sport" id="sport">
+            <label for="gaming">gaming</label>
+            <input type="checkbox" value="gaming" id="gaming">
+            <label for="art">art</label>
+            <input type="checkbox" value="art" id="art">
+            <label for="acting">acting</label>
+            <input type="checkbox" value="acting" id="acting"> <br>
+        </fieldset>
+        <input type="submit" value="submit" /><br>
+    </form>
+</body>
+
+</html>
+
+<!--if we add for we have to add id-->
