@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Objects JS</title>
+    <style>
+        section {
+            border: 1px dashed lime;
+            width: 25%;
+        }
+        
+        article {
+            border: 1px dashed magenta;
+            background: rgb(248, 216, 221);
+            width: 80%;
+            margin: 15px;
+            padding: 10px 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <section id="contact-card">
+        <h1>Contacts</h1>
+    </section>
+
+    <script>
+        var contactCard = document.getElementById("contact-card");
+
+        var contact1 = {
+            firstName: "Patricia",
+            lastName: "Bielikova",
+            email: "pata@gmail.com",
+            twitter: "@pata",
+            url: "http://www.patriciabielikova.sk"
+        };
+        var contact2 = {
+            firstName: "Anna",
+            lastName: "Smith",
+            email: "smith.anna@gmail.com",
+            twitter: "@asmith",
+            url: "http://www.annas.com"
+        };
+        var contact3 = {
+            firstName: "Lucia",
+            lastName: "Moska",
+            email: "luciamoska@gmail.com",
+            twitter: "@moska",
+            url: "http://www.lm.sk"
+        };
+
+        var card1 = document.createElement("article");
+
+        var cardHead1 = document.createElement("h1");
+        var cardHeadText1 = document.createTextNode(contact1.firstName + " " + contact1.lastName);
+        cardHead1.appendChild(cardHeadText1);
+        card1.appendChild(cardHead1);
+
+        var cardEmail1 = document.createElement("p");
+        var cardEmailText1 = document.createTextNode(contact1.email);
+        cardEmail1.appendChild(cardEmailText1);
+        card1.appendChild(cardEmail1);
+
+        var cardTwitter1 = document.createElement("p");
+        var cardTwitterText1 = document.createTextNode(contact1.twitter);
+        cardTwitter1.appendChild(cardTwitterText1);
+        card1.appendChild(cardTwitter1);
+
+        var cardUrl1 = document.createElement("p");
+        var cardUrlText1 = document.createTextNode(contact1.url);
+        cardUrl1.appendChild(cardUrlText1);
+        card1.appendChild(cardUrl1);
+
+        contactCard.appendChild(card1);
+    </script>
+</body>
+
+</html>
