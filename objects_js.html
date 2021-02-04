@@ -8,15 +8,15 @@
     <style>
         section {
             border: 1px dashed lime;
-            width: 25%;
+            width: 300px;
         }
         
         article {
             border: 1px dashed magenta;
             background: rgb(248, 216, 221);
-            width: 80%;
+            width: 200px;
             margin: 15px;
-            padding: 10px 20px;
+            padding: 10px 25px;
         }
     </style>
 </head>
@@ -51,6 +51,7 @@
             url: "http://www.lm.sk"
         };
 
+        //CARD1
         var card1 = document.createElement("article");
 
         var cardHead1 = document.createElement("h1");
@@ -74,6 +75,56 @@
         card1.appendChild(cardUrl1);
 
         contactCard.appendChild(card1);
+
+        //CARD2
+        var card2 = document.createElement("article");
+
+        var cardHead2 = document.createElement("h1");
+        var cardHeadText2 = document.createTextNode(contact2.firstName + " " + contact2.lastName);
+        cardHead2.appendChild(cardHeadText2);
+        card2.appendChild(cardHead2);
+
+        var cardEmail2 = document.createElement("p");
+        var cardEmailText2 = document.createTextNode(contact2.email);
+        cardEmail2.appendChild(cardEmailText2);
+        card2.appendChild(cardEmail2);
+
+        var cardTwitter2 = document.createElement("p");
+        var cardTwitterText2 = document.createTextNode(contact2.twitter);
+        cardTwitter2.appendChild(cardTwitterText2);
+        card2.appendChild(cardTwitter2);
+
+        var cardUrl2 = document.createElement("p");
+        var cardUrlText2 = document.createTextNode(contact2.url);
+        cardUrl2.appendChild(cardUrlText2);
+        card2.appendChild(cardUrl2);
+
+        contactCard.appendChild(card2);
+
+        //CARD3
+        var card3 = document.createElement("article");
+
+        var cardHead3 = document.createElement("h1");
+        var cardHeadText3 = document.createTextNode(contact3.firstName + "" + contact3.lastName);
+        cardHead3.appendChild(cardHeadText3);
+        card3.appendChild(cardHead3);
+
+        var cardEmail3 = document.createElement("p");
+        var cardEmailText3 = document.createTextNode(contact3.email);
+        cardEmail3.appendChild(cardEmailText3);
+        card3.appendChild(cardEmail3);
+
+        var cardTwitter3 = document.createElement("p");
+        var cardTwitterText3 = document.createTextNode(contact3.twitter);
+        cardTwitter3.appendChild(cardTwitterText3);
+        card3.appendChild(cardTwitter3);
+
+        var cardUrl3 = document.createElement("p");
+        var cardUrlText3 = document.createTextNode(contact3.url);
+        cardUrl3.appendChild(cardUrlText3);
+        card3.appendChild(cardUrl3);
+
+        contactCard.appendChild(card3);
     </script>
 </body>
 
