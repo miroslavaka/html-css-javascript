@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quotes generator</title>
+    <style>
+        body {
+            background: burlywood;
+        }
+        
+        .quote {
+            background: white;
+            width: 700px;
+            height: 280px;
+            margin: auto;
+            margin-top: 200px;
+            position: relative;
+            box-shadow: 1px 1px 2px rgba(0, 0, 0, .3);
+            padding: 0 35px;
+        }
+        
+        #text {
+            color: burlywood;
+            text-align: center;
+            padding-top: 4em;
+            font-weight: 700;
+            font-size: 1.2em;
+        }
+        
+        #author {
+            color: burlywood;
+            padding-left: 4em;
+        }
+        
+        #btn {
+            background: burlywood;
+            color: white;
+            box-shadow: 1px 1px 2px rgba(0, 0, 0, .4);
+            position: absolute;
+            top: 130px;
+            right: 15%;
+            outline: none;
+            border: none;
+            border-radius: 7px;
+            padding: 15px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="quote">
+            <p id="text">Hit New Quote button to get the new quote</p>
+            <p id="author">Unknown</p>
+            <button id="btn" onclick="changeQuote();">New Quote</button>
+        </div>
+    </div>
+    <script>
+        var quote1 = {
+            quotes: "To be yourself in a world that is constantly trying to make you something else is the greatest accomplishment.",
+            author: "Ralph Waldo Emerson"
+        }
+        var quote2 = {
+            quotes: "Once we accept our limits, we go beyond them",
+            author: "Albert Einstein"
+        }
+        var quote3 = {
+            quotes: "We suffer more often in imagination than in reality",
+            author: "Seneca"
+        }
+        var quote4 = {
+            quotes: "No great mind has ever existed without a touch of madness",
+            author: "Aristotele"
+        }
+
+        var arr = [];
+        arr.push(quote1);
+        arr.push(quote2);
+        arr.push(quote3);
+        arr.push(quote4);
+        console.log(arr);
+
+        function changeQuote() {
+            var text = document.getElementById("text");
+            var author = document.getElementById("author");
+            var rnd = Math.floor(Math.random() * arr.length);
+            console.log("random number is: " + rnd);
+
+            text.innerText = "\"" + arr[rnd].quotes + "\"";
+            author.innerText = arr[rnd].author;
+
+            var r, g, b;
+            r = Math.floor(Math.random() * 255);
+            g = Math.floor(Math.random() * 255);
+            b = Math.floor(Math.random() * 255);
+            var col = "(" + r + ", " + g + ", " + b + ")";
+            console.log("rgb is: " + col);
+            text.style.color = "rgb" + col;
+            author.style.color = "rgb" + col;
+            document.querySelector("body").style.background = "rgb" + col;
+            document.querySelector("#btn").style.background = "rgb" + col;
+        }
+    </script>
+</body>
+
+</html>
