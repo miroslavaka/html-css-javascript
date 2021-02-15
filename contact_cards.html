@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact cards</title>
+    <script type="text/javascript" src="https://gc.kis.v2.scr.kaspersky-labs.com/FD126C42-EBFA-4E12-B309-BB3FDD723AC1/main.js?attr=Hd1obZqhO_4R1clFaeHZNOKDsPjvA-YVBAG5lNAO_43pPSHIbBNLXUlzZvWWtTHoPTpibv9gc7J94-RQAoYOkhBtAv9sAvNbmkATWoOOPog4PjIr_Aj2deX3cg1RCwgpinp9B-ykUcXq2r9iUiY4pFmMlJauCazCy-eVlUuWyrC-cfbRhVLgBcUvnixospcgXXGSegrZZo7G3X5PTwb0Tp2GdGbh3duf5v7MnGPi07ETX-WD9Vwyf4wR20EWS-xPtZ56VmNdOV0PEwSwvD7XqYTDp17-NcmdsSjhRamafW0V_PRaXPpJazwPlowSUJDFtjGgGx4jBOUnmUaHDtHKUzxQNQR9Tcj8-EXCKuE2usVkLaWoIpskWpDXhsV3X007rdE2CxERTTZSfs4d7B69CKADNe-jWqSBgu32TBkZ7vDnukmsWNzv82tvoqQE02-lKi6P2abJUaAP0s9-zuhP8xX14LWRth7GcckirS6Adc7O6KUzK04HSoZNSaoT4tOonK6vYhbyF6TKW4U4xiERtCUI_JOEBvIiFsF1sTzbAkBed9rXd-Rx15U5yqopEsI2tFCXiBRT3HF5nKnthFxm-_Xp_IU-rpDvpTXvmaI_Ekh5SgcPPqTD92luSmF_JjdbwL0QPxNz8m2pHC21KdWm-gudmmzt9g3oBbCxW6RegapB3cyr3GYn2xN1FusHPXwrbU0LNLgGbVTd2vLJwydnoU4SmCIc00X9iU5ToO0uilnl_VPYA-rh7T0Fxn1CV29lh1yxK1k3dlYRr81aWxfkfCyhuZaoccJEJaWl0F0KY372YLlS-njSBC2EARpKhgWa1DfVjQbbnGDmev5Gcz28sa6iR8Kozp9eRtqpC3xVIJG-xXd2ArpY-8QTM_S2mOI6EtI7J6DHVKr7IhHuoITSovGNY5NAJTnatEvFXYIkrd8uKUs3UbG729D7YfKfMLjLYIoC2Mm5MMbeCSLTRCVLyJuhNUw8wCSzdlCVyjmtREUMC6-calrJ9iGzxT9kTulm9VAXF5ODGOP2su7v0ra2aav2VmrgWZCUFA4Gf-QhqLriLwghgl0gn80MMD5-2iZPIRc4FcHrHTzEp-o_EQhQFG5jt8wJshmRahEsN7PfWB--YzpEnIqzb9NgJ_MfjF0eKp0pmtfxir7sZDYixvf57VzzlUfSCrBi1cQniypKwDQ"
+        nonce="5a10c2339435b03b3decbe3f1f2d0784" charset="UTF-8"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Lora&display=swap');
+        body {
+            font-family: 'Lora', serif;
+        }
+        
+        .header {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 1em;
+            font-family: 'Lora', serif;
+        }
+        
+        .header:after {
+            content: "⚍⚌⚍";
+            margin: 1em 0;
+        }
+        
+        .main {
+            margin: 0 auto;
+            padding: 0 1em;
+            width: 70em;
+        }
+        
+        .contact {
+            margin-bottom: 1em;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            grid-template-rows: auto 1fr;
+            gap: 0 3em;
+        }
+        
+        .contact:after {
+            content: "";
+            margin: 0 auto;
+            padding-top: 1em;
+            display: block;
+            grid-column: span 2;
+            border-bottom: 3px solid black;
+            width: 4em;
+        }
+        
+        .contact_image {
+            grid-row: span 2;
+        }
+        
+        li a {
+            text-decoration: none;
+            color: #ace1af;
+        }
+    </style>
+</head>
+
+<body>
+    <header class="header">
+        <h1 class="title">Contact Cards</h1>
+    </header>
+    <main class="main">
+        <div class="page-header">
+            <h2></h2>
+            <p></p>
+        </div>
+        <article class="contact" id="contact1">
+            <figure class="contact_image">
+                <img src="https://images.unsplash.com/photo-1613333438316-c3af05d00b72?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=450&q=80" alt="">
+            </figure>
+            <h1 class="name">Contact1</h1>
+            <ul>
+                <li>First Name: <span>Lucia</span></li>
+                <li>Last Name: <span>Jasna</span></li>
+                <li>Email: <span>jasna@gmail.com</span></li>
+                <form action="">
+                    <input type="number">
+                    <button>Update</button>
+                </form>
+                <li>Twitter: <span>@jasna</span></li>
+                <li>Url: <span>hviezdajasna.sk</span></li>
+                <form action="">
+                    <input type="number">
+                    <button>Update</button>
+                </form>
+            </ul>
+        </article>
+        <article class="contact" id="contact2">
+            <figure class="contact_image">
+                <img src="https://images.unsplash.com/photo-1593642634402-b0eb5e2eebc9?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=450&q=80" alt="">
+            </figure>
+            <h1 class="name">Contact2</h1>
+            <ul>
+                <li>First Name: <span>Jana</span></li>
+                <li>Last Name: <span>Kosna</span></li>
+                <li>Email: <span>jana@gmail.com</span></li>
+                <form action="">
+                    <input type="number">
+                    <button>Update</button>
+                </form>
+                <li>Twitter: <span><a href="twitter.com/jajana">@jajana</a></span></li>
+                <li>Url: <span> <a href="jaja.sk">jaja.sk</a></span></li>
+                <form action="">
+                    <input type="number">
+                    <button>Update</button>
+                </form>
+            </ul>
+        </article>
+    </main>
+    <footer></footer>
+
+    <script>
+        document.querySelectorAll("#contact1 li span").forEach(item => item.style.color = "#3cb371");
+        document.querySelectorAll("#contact2 li span").forEach(item => item.style.color = "#ace1af");
+    </script>
+</body>
+
+</html>
