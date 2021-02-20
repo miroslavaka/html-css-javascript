@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>Music player</title>
+    <style>
+        body {
+            background: #ff6961;
+            margin: 0;
+            padding: 0;
+        }
+        
+        .main {
+            width: 350px;
+            height: 600px;
+            background: #fff;
+            position: absolute;
+            left: 50%;
+            transform: translate(-50%, 0);
+            margin-top: 50px;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, .3);
+        }
+        
+        .coverImg {
+            background: url('https://cdn.pixabay.com/photo/2020/05/17/20/34/concept-5183469_1280.jpg') no-repeat;
+            width: 350px;
+            height: 350px;
+            background-size: cover;
+            position: absolute;
+            top: 0;
+            left: 0;
+            opacity: .7;
+        }
+        
+        .searchIcon::before {
+            content: "\f002";
+            color: #191970;
+            font-size: 18px;
+            position: absolute;
+            left: 7%;
+            top: 30px;
+            font-family: FontAwesome;
+            cursor: pointer;
+        }
+        
+        .playerMain {
+            background: #353839;
+            width: 350px;
+            height: 250px;
+            position: absolute;
+            top: 350px;
+        }
+        
+        .player {
+            text-align: center;
+            width: 250px;
+            height: 40px;
+            position: absolute;
+            top: 70%;
+            left: 50%;
+            transform: translate(-50%, 0);
+        }
+        
+        #back::before {
+            content: "\f04a";
+            font-size: 18px;
+            color: #fff;
+            cursor: pointer;
+            font-family: FontAwesome;
+        }
+    </style>
+</head>
+
+<body>
+    <article class="main">
+        <div class="coverImg"></div>
+        <div class="searchIcon"></div>
+        <div class="playerMain"></div>
+        <div class="text"></div>
+
+
+        <table class="player">
+            <td><input type="checkbox" id="back"></td>
+            <td><input type="checkbox" id="play"></td>
+            <td><input type="checkbox" id="forward"></td>
+        </table>
+
+        <table></table>
+    </article>
+</body>
+
+</html>
