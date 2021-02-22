@@ -110,13 +110,55 @@
         
         .footer {
             text-align: center;
-            width: 250px;
+            width: 330px;
             height: 40px;
             color: #fff;
             position: absolute;
             bottom: 40px;
-            left: 70px;
+            left: 0px;
             z-index: 20;
+            font-family: FontAwesome;
+        }
+        
+        .love::before {
+            content: "\f004";
+            cursor: pointer;
+        }
+        
+        .shuffle::before {
+            content: "\f074";
+            cursor: pointer;
+        }
+        
+        .repeat::before {
+            content: "\f01e";
+            cursor: pointer;
+        }
+        
+        .options::before {
+            content: "\f141";
+            cursor: pointer;
+        }
+        
+        .info {
+            position: absolute;
+            top: 380px;
+            left: 50%;
+            transform: translate(-50%, 0);
+            text-align: center;
+            color: #fff;
+        }
+        
+        h5,
+        h4 {
+            margin: 0px;
+        }
+        
+        h5 {
+            font-size: 13px;
+            line-height: 25px;
+            font-weight: 400;
+            color: #c8c8c8;
         }
     </style>
 </head>
@@ -128,11 +170,20 @@
         <div class="playerMain"></div>
         <div class="text"></div>
 
+        <div class="info">
+            <h4>MIAOW HIDDEN</h4>
+            <h5>Miaow hidden</h5>
+        </div>
+
+        <audio id="audio">
+            <source src="http://www.jplayer.org/audio/mp3/Miaow-02-Hidden.mp3">
+            <source src="http://www.jplayer.org/audio/mp3/Miaow-02-Hidden.ogg">
+        </audio>
 
         <table class="player">
             <tr>
                 <td><input type="checkbox" id="back" /><label class="back" for="back"></label></td>
-                <td><input type="checkbox" id="play" /><label class="play" for="play"></label></td>
+                <td><input type="checkbox" id="play" /><label class="play" for="play" onclick="togglePlay();"></label></td>
                 <td><input type="checkbox" id="forward" /><label class="forward" for="forward"></label></td>
             </tr>
         </table>
@@ -145,5 +196,19 @@
         </table>
     </article>
 </body>
+<script>
+    let audio = document.getElementById("audio");
+    let playpause = document.getElementById("play");
+
+    function togglePlay() {
+        if (audio.paused || audio.ended) {
+            playpause.title = "Pause";
+            audio.play();
+        } else {
+            playpause.title = "Play";
+            audio.pause();
+        }
+    }
+</script>
 
 </html>
