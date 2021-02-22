@@ -46,6 +46,10 @@
             cursor: pointer;
         }
         
+        .searchIcon:hover::before {
+            color: #5e5eaf;
+        }
+        
         .playerMain {
             background: #353839;
             width: 350px;
@@ -54,22 +58,65 @@
             top: 350px;
         }
         
+        input[type=checkbox] {
+            visibility: hidden;
+        }
+        
         .player {
             text-align: center;
             width: 250px;
             height: 40px;
+            color: #fff;
+            font-size: 18px;
             position: absolute;
-            top: 70%;
+            bottom: 120px;
             left: 50%;
             transform: translate(-50%, 0);
+            font-family: FontAwesome;
         }
         
-        #back::before {
+        .back::before {
             content: "\f04a";
-            font-size: 18px;
-            color: #fff;
             cursor: pointer;
-            font-family: FontAwesome;
+            transition: all 0.15s linear;
+        }
+        
+        .play::before {
+            content: "\f04b";
+            cursor: pointer;
+            transition: all 0.15s linear;
+        }
+        
+        .forward::before {
+            content: "\f04e";
+            cursor: pointer;
+            transition: all 0.15s linear;
+        }
+        
+        .back:hover:before {
+            color: #bbb;
+            transition: all 0.15s linear;
+        }
+        
+        .play:hover:before {
+            color: #bbb;
+            transition: all 0.15s linear;
+        }
+        
+        .forward:hover:before {
+            color: #bbb;
+            transition: all 0.15s linear;
+        }
+        
+        .footer {
+            text-align: center;
+            width: 250px;
+            height: 40px;
+            color: #fff;
+            position: absolute;
+            bottom: 40px;
+            left: 70px;
+            z-index: 20;
         }
     </style>
 </head>
@@ -83,12 +130,19 @@
 
 
         <table class="player">
-            <td><input type="checkbox" id="back"></td>
-            <td><input type="checkbox" id="play"></td>
-            <td><input type="checkbox" id="forward"></td>
+            <tr>
+                <td><input type="checkbox" id="back" /><label class="back" for="back"></label></td>
+                <td><input type="checkbox" id="play" /><label class="play" for="play"></label></td>
+                <td><input type="checkbox" id="forward" /><label class="forward" for="forward"></label></td>
+            </tr>
         </table>
 
-        <table></table>
+        <table class="footer">
+            <td><input type="checkbox" id="love" checked /><label class="love" for="love"></label></td>
+            <td><input type="checkbox" id="shuffle" /><label class="shuffle" for="shuffle"></label></td>
+            <td><input type="checkbox" id="repeat" checked /><label class="repeat" for="repeat"></label></td>
+            <td><input type="checkbox" id="options" /><label class="options" for="options"></label></td>
+        </table>
     </article>
 </body>
 
