@@ -5,8 +5,24 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
     <title>Flash Message</title>
     <style>
+         :root {
+            --green: #3cb371;
+            --red: #ff6347;
+            --white: #fff;
+            --black: #000;
+        }
+        
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Poppins', sans-serif;
+        }
+        
         .container {
             display: flex;
             justify-content: center;
@@ -19,31 +35,95 @@
             width: 100px;
             height: 50px;
             text-align: center;
-            color: white;
             margin: 0 10px;
+            padding: 5px 10px;
+            cursor: pointer;
+            border-radius: 20px;
+            box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.3);
+        }
+        
+        .btn a {
+            color: var(--white);
+            text-decoration: none;
+            position: relative;
+            top: 35%;
         }
         
         .success {
-            background: lime;
+            background: var(--green);
         }
         
         .failure {
-            width: 100px;
-            height: 50px;
-            background: red;
+            background: var(--red);
+        }
+        
+        #box {
+            height: 45px;
+            width: 100%;
+            color: var(--white);
+            font-weight: 700;
+            padding: 0 20px;
+        }
+        
+        .closer {
+            color: var(--black);
+            cursor: pointer;
+            position: absolute;
+            top: 8px;
+            right: 10px;
+            font-size: 20px;
+        }
+        
+        .flash-message {
+            font-size: 0.8em;
+            position: absolute;
+            top: 420px;
+            left: 50%;
+            transform: translate(-50%, 0);
         }
     </style>
+
+    <script>
+        var box = document.getElementById("box");
+
+        function redClick() {
+            document.getElementById("box").classList.add("failure")
+            document.getElementById("box").classList.remove("success");
+            document.getElementById("text").innerHTML = "Nooo...Failure!";
+        }
+
+        function greenClick() {
+            document.getElementById("box").classList.add("success");
+            document.getElementById("box").classList.remove("failure")
+            document.getElementById("text").innerHTML = "Victory!";
+        }
+
+        function closeAll() {
+            document.getElementById("box").classList.remove("success");
+            document.getElementById("box").classList.remove("failure");
+            document.getElementById("text").innerHTML = "";
+        }
+    </script>
 </head>
 
 <body>
+    <div id="box">
+        <span id="text"></span>
+    </div>
+    <a href="#" onclick="closeAll();">
+        <i class="fa fa-times closer"></i>
+    </a>
     <div class="container">
         <div class="success btn">
-            <p>Success</p>
+            <a href="#" onclick="greenClick();">Success</a>
         </div>
 
         <div class="failure btn">
-            <p>Failure</p>
+            <a href="#" onclick="redClick();">Failure</a>
         </div>
+    </div>
+    <div class="flash-message">
+        <p>Click buttons to see Flash message</p>
     </div>
 </body>
 
