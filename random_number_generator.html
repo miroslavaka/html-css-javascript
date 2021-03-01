@@ -9,8 +9,13 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
     <title>Document</title>
     <style>
+         :root {
+            --green: #32CD32;
+            --gray: #CCCCCC;
+        }
+        
         .container {
-            background: limegreen;
+            background: var(--green);
             width: 500px;
             height: 250px;
             position: absolute;
@@ -23,7 +28,7 @@
         }
         
         h2 {
-            color: lightgray;
+            color: var(--gray);
             text-shadow: 0px 1px 1px rgba(0, 0, 0, 0.3);
         }
         
@@ -41,7 +46,7 @@
         }
         
         .button {
-            background: lightgray;
+            background: var(--gray);
             width: 25%;
             margin: 30px 15px;
             padding: 18px;
