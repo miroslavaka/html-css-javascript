@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <title>Document</title>
+    <style>
+        .container {
+            background: limegreen;
+            width: 500px;
+            height: 250px;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            border-radius: 10px;
+            font-family: 'Roboto', sans-serif;
+        }
+        
+        h2 {
+            color: lightgray;
+            text-shadow: 0px 1px 1px rgba(0, 0, 0, 0.3);
+        }
+        
+        input {
+            padding: 13px 10px;
+            outline: none;
+            border: none;
+            border-radius: 10px;
+            font-size: 1.2em;
+        }
+        
+        .btn {
+            display: flex;
+            justify-content: center;
+        }
+        
+        .button {
+            background: lightgray;
+            width: 25%;
+            margin: 30px 15px;
+            padding: 18px;
+            border-radius: 20px 10px;
+            cursor: pointer;
+        }
+        
+        .button:hover {
+            transform: scale(1.1);
+            transition: .3s linear;
+        }
+    </style>
+    <script>
+        // var output = document.querySelector('input');
+        //var output = document.getElementById("rndNr");
+
+        function generateNr() {
+            let randomNr = Math.floor(Math.random() * 20);
+            console.log(randomNr);
+            document.querySelector('input').value = randomNr;
+        }
+
+        function deleteNr() {
+            //let deleteNr = Math.floor(Math.random() * 20);
+            //console.log(randomNr);
+            document.querySelector('input').value = "";
+        }
+    </script>
+</head>
+
+<body>
+    <div class="container">
+        <div class="input">
+            <h2>Random Number Generator</h2>
+            <input type="text" id="rndNr">
+        </div>
+        <div class="btn">
+            <div class="button" onclick="generateNr();">Generate</div>
+            <div class="button" onclick="deleteNr();">Delete</div>
+        </div>
+
+    </div>
+</body>
+
+</html>
