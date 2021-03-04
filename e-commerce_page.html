@@ -7,21 +7,97 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>e-commerce Page</title>
     <style>
+         :root {
+            --gray: #d3d3d3;
+            --white: #fff;
+            --brown: #eae0c8;
+            --black: #000;
+        }
+        
         body {
-            background: yellowgreen;
+            background: var(--brown);
         }
         
         .container {
             width: 700px;
             height: 400px;
-            background: white;
+            background: var(--white);
+            margin: auto;
+        }
+        
+        .left {
+            background: url('https://cdn.pixabay.com/photo/2014/06/18/18/41/running-shoe-371624_1280.jpg') no-repeat;
+            height: 210px;
+            width: 360px;
+            background-size: cover;
+            transform: rotate(25deg);
+            margin: auto;
+            position: absolute;
+            top: 85px;
+            left: 30%;
+        }
+        
+        .right {
+            float: right;
+            padding-right: 30px;
+            padding-top: 20px;
+        }
+        
+        .size-label {
+            border: 1px solid var(--black);
+            cursor: pointer;
+            border-radius: 5px;
+            padding: 3px;
+            z-index: 10;
+        }
+        /* .diagonal {
+            background: lightcoral;
+            width: 80px;
+            height: 400px;
+            position: absolute;
+            left: 900px;
+            transform: skew(-35deg);
+        }*/
+        
+        button {
+            background: var(--gray);
+            padding: 10px 30px;
+            border-radius: 10px;
+            margin-top: 50px;
+            outline: none;
+            cursor: pointer;
+            border: none;
+            color: var(--white);
+        }
+        
+        button:hover {
+            transform: scale(1.1);
+            transition: linear;
+            transition-duration: .3s;
         }
     </style>
 </head>
 
 <body>
     <div class="container">
-        <div class="right"></div>
+        <div class="right">
+            <div class="wrapper">
+                <h2>Running shoes Woman</h2>
+                <h4>Transcendent</h4>
+                <h5>Eur 70</h5>
+                <div>
+                    <label for="" id="size">Size:</label>
+                    <label for="" class="size-label">36</label>
+                    <label for="" class="size-label">37</label>
+                    <label for="" class="size-label">38</label>
+                    <label for="" class="size-label">39</label>
+                    <label for="" class="size-label">40</label>
+                </div>
+            </div>
+            <div class="btn">
+                <button>Add to cart</button>
+            </div>
+        </div>
         <div class="diagonal"></div>
         <div class="left"></div>
     </div>
