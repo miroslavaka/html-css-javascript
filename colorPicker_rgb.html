@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            background: rgb(0, 0, 0);
+        }
+        
+        .range-input {
+            display: inline-block;
+            color: white;
+        }
+        
+        .range {
+            display: block;
+            border-radius: 10px;
+        }
+        
+        .output {
+            margin-bottom: 110px;
+        }
+        
+        input[type='range'] {
+            appearance: none;
+            height: 7px;
+            width: 150px;
+            background: gray;
+            margin: 0 0 0 10px;
+        }
+        
+        .text {
+            text-align: center;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            color: white;
+            font-size: 38px;
+            margin-left: -3em;
+        }
+        
+        .range::-webkit-slider-thumb {
+            appearance: none;
+            width: 20px;
+            height: 20px;
+            background: lightgray;
+            border-radius: 50%;
+            border: 2px solid #f2f7fb;
+            box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="range-input">
+        <input type="range" class="range" min=0 max=255>
+        <output class="output">0</output>
+
+        <input type="range" class="range" min=0 max=255>
+        <output class="output">0</output>
+
+        <input type="range" class="range" min=0 max=255>
+        <output class="output">0</output>
+    </div>
+    <div class="text">rgb(0,0,0)</div>
+</body>
+
+<script>
+    let rngs = document.querySelectorAll('.range');
+    let output = document.querySelectorAll('.output');
+    let body = document.querySelector('body');
+    let text = document.querySelector('.text');
+    for (let i = 0; i < rngs.length; i++) {
+        //console.log(rngs[i].value);
+        rngs[i].addEventListener('input', function() {
+            changeRangeVal(i);
+        });
+    }
+
+    function changeRangeVal(i) {
+        output[i].innerHTML = rngs[i].value;
+
+        changeBgr(i);
+    }
+
+    function changeBgr(i) {
+        //console.log('value of range ' + (i + 1) + ':' + rngs[i].value);
+        body.style.background = ["rgb(", rngs[0].value, ",", rngs[1].value, ",", rngs[2].value, ")"].join("");
+        console.log(["rgb(", rngs[0].value, ",", rngs[1].value, ",", rngs[2].value, ")"].join(""));
+
+        text.innerHTML = "rgb(" + rngs[0].value + "," + rngs[1].value + "," + rngs[2].value + ")";
+    }
+</script>
+
+</html>
