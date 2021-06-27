@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!--https://codepen.io/surazzshahil/pen/xBBqEO-->
+</head>
+<style>
+    .header {
+        text-align: center;
+        margin-top: 8em;
+    }
+    
+    .header h1 {
+        text-decoration: underline;
+    }
+    
+    .boxes {
+        display: flex;
+        justify-content: center;
+        position: absolute;
+        bottom: 2px;
+    }
+    
+    .box {
+        width: 250px;
+        height: 150px;
+        margin: 2px;
+        cursor: pointer;
+    }
+</style>
+<script>
+    window.addEventListener('load', function() {
+        //let boxes = document.querySelectorAll('.boxes div');
+        let boxes = document.querySelectorAll('.box');
+        let color = ["#74ed67", "#67daed", "#7467ed", "#e867ed", "#ed679d", "#edd967"];
+
+        for (let i = 0; i < boxes.length; i++) {
+            console.log(boxes.length);
+            boxes[i].style.background = color[i];
+        }
+
+        boxes.forEach((box, i) => box.addEventListener('click', function() {
+            let audio = document.querySelectorAll('audio');
+            audio[i].play();
+        }));
+    });
+</script>
+
+<body>
+    <section>
+        <div class="header">
+            <h1>Press color box to play music</h1>
+            <p>Create sound</p>
+        </div>
+        <div class="boxes">
+            <div class="box"><audio src="https://raw.githubusercontent.com/DevEdwin/vanilla-js-beatmaker/master/sounds/bubbles.mp3"></audio></div>
+            <div class="box"><audio src="https://raw.githubusercontent.com/DevEdwin/vanilla-js-beatmaker/master/sounds/bubbles.mp3"></audio></div>
+            <div class="box"><audio src="https://raw.githubusercontent.com/DevEdwin/vanilla-js-beatmaker/master/sounds/bubbles.mp3"></audio></div>
+            <div class="box"><audio src="https://raw.githubusercontent.com/DevEdwin/vanilla-js-beatmaker/master/sounds/bubbles.mp3"></audio></div>
+            <div class="box"><audio src="https://raw.githubusercontent.com/DevEdwin/vanilla-js-beatmaker/master/sounds/bubbles.mp3"></audio></div>
+            <div class="box"><audio src="https://raw.githubusercontent.com/DevEdwin/vanilla-js-beatmaker/master/sounds/bubbles.mp3"></audio></div>
+        </div>
+    </section>
+</body>
+
+</html>
