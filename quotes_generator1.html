@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!--https://codepen.io/saulysgm/pen/OpVMdW-->
+</head>
+<style>
+    .quote-generator h1 {
+        text-align: center;
+        margin-bottom: 2em;
+    }
+    
+    .generate-quote {
+        position: absolute;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+    
+    .quote-display {
+        text-align: center;
+        margin-top: 5.5em;
+    }
+    
+    img {
+        width: 50vw;
+        align-items: center;
+        margin: auto;
+        position: absolute;
+        left: 50%;
+        transform: translate(-50%, 0);
+    }
+</style>
+
+<body>
+    <div class="quote-generator">
+        <h1>Quote Generator</h1>
+        <button class="generate-quote">Generate quote</button>
+        <h3 class="quote-display"></h3>
+    </div>
+</body>
+<script>
+    const quotes = [{
+        quote: 'Trust the timing of your life',
+        image: 'https://cdn.pixabay.com/photo/2021/04/25/10/51/poppy-6206112_1280.jpg'
+    }, {
+        quote: 'If you can´t change it, change your attitude',
+        image: 'https://cdn.pixabay.com/photo/2021/06/02/19/01/chive-6305257_1280.jpg'
+    }, {
+        quote: 'It does not matter how slowly you go as long as you do not stop',
+        image: 'https://cdn.pixabay.com/photo/2020/05/18/17/20/bee-5187584_1280.jpg'
+    }, {
+        quote: 'Silence is better than unnecessary drama',
+        image: 'https://cdn.pixabay.com/photo/2020/05/21/14/08/dragonfly-5200895_1280.jpg'
+    }, {
+        quote: 'Make everyday a little less ordinary',
+        image: 'https://cdn.pixabay.com/photo/2020/03/22/09/04/flowers-4956291_1280.jpg'
+    }, {
+        quote: 'Don´ t stop until you´ re proud',
+        image: 'https://cdn.pixabay.com/photo/2020/05/19/19/28/blue-5192351_1280.jpg'
+    }];
+
+    let display = document.querySelector('.quote-display');
+    let generate = document.querySelector('.generate-quote');
+    let quotegenerator = document.querySelector('.quote-generator');
+
+    let img = document.createElement('img');
+
+    generate.addEventListener('click', function() {
+        let randomNr = Math.floor(Math.random() * quotes.length);
+        console.log(randomNr);
+        display.innerText = quotes[randomNr].quote;
+
+        img.src = quotes[randomNr].image;
+        console.log(img.src);
+        //quotegenerator.appendChild(img);
+        document.querySelector('body').appendChild(img);
+    });
+</script>
+
+</html>
