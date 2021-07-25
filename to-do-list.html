@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!--https://www.w3schools.com/howto/howto_js_todolist.asp-->
+</head>
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Satisfy&display=swap');
+
+    .input-container {
+        width: 400px;
+        padding: 2em;
+        background: crimson;
+        border-radius: 0.2em;
+        box-shadow: 1px 2px 2px rgba(0, 0, 0, 0.2);
+    }
+
+    .input-container h1 {
+        color: #fff;
+        font-family: 'Satisfy', cursive;
+        text-align: center;
+        margin: 0;
+    }
+
+    #input {
+        margin: auto;
+        align-items: center;
+        width: 200px;
+        padding: 0.7em 1em;
+        font-family: 'Satisfy', cursive;
+        font-size: 1.1em;
+        border-radius: 0.2em;
+        border: none;
+        outline: none;
+        box-shadow: inset;
+    }
+
+    #add-item {
+        padding: 0.7em 1em;
+        margin-left: .9em;
+        font-family: 'Satisfy', cursive;
+        font-size: 1.1em;
+        border-radius: 0.2em;
+        border: none;
+        outline: none;
+    }
+
+    .close {
+        cursor: pointer;
+        float: right;
+    }
+
+    .result-container ul {
+        width: 400px;
+    }
+
+    .result-container ul li {
+        list-style-type: none;
+        background: lightgray;
+        margin: 0.5em;
+        padding: 0.5em 1em;
+        font-family: 'Satisfy', cursive;
+        font-size: 1.1em;
+        border-radius: 0.2em;
+        box-shadow: 1px 2px 2px rgba(0, 0, 0, 0.2);
+    }
+</style>
+
+<body>
+    <div class="container">
+        <div class="input-container">
+            <div>
+                <h1>To do list</h1>
+            </div>
+            <input type="text" id="input">
+            <button id="add-item">Add item</button>
+        </div>
+        <div class="result-container">
+            <!-- <ul>
+                <li></li>>
+            </ul>-->
+        </div>
+    </div>
+</body>
+<script>
+    let input = document.querySelector('#input');
+    console.log(input.value);
+    let btn = document.querySelector('#add-item');
+    console.log(btn);
+
+    btn.addEventListener('click', showres);
+    let newul = document.createElement('ul');
+
+    function showres() {
+        let newli = document.createElement('li');
+        newul.appendChild(newli);
+        let text = document.createTextNode(input.value);
+        newli.appendChild(text);
+        document.querySelector('.result-container').appendChild(newul);
+
+        let newspan = document.createElement('span');
+        newspan.className = 'close';
+        newli.appendChild(newspan);
+        let close = document.createTextNode("\u00D7");
+
+        newspan.appendChild(close);
+
+        let deletebtn = document.querySelectorAll('.close');
+        console.log(deletebtn);
+
+        input.value = '';
+
+        for (let i = 0; i < deletebtn.length; i++) {
+            deletebtn[i].addEventListener('click', function () {
+                console.log(this.parentElement);
+                //newli.style.display = 'none';
+                this.parentElement.style.display = 'none';
+            });
+        }
+    }
+
+</script>
+
+</html>
