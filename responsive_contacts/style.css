@@ -1,0 +1,52 @@
+body{
+   background: linear-gradient(to right, #a1ffce, #faffd1);
+}
+.contact{
+  margin: 10px auto;
+  border: 1px solid silver;
+  border-radius: 25px;
+  width: 340px;
+  max-width: 540px;
+  background: beige;
+  padding: 10px;
+  box-shadow: 2px 3px 3px rgba(0, 0, 0, 0.2);
+}
+.contact h3,
+.contact p{
+  text-align: center;
+}
+img{
+  width: 130px;
+  border-radius: 50%;
+  margin: auto;
+  /*position: relative;
+  left: 50%;
+  transform:translate(-50%, 0%);*/
+}
+@media screen and (min-width: 540px){
+  .contacts{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space evenly;
+  }
+  .contact{
+    display: flex;
+    width: calc(50%-30px);
+    flex: 1 1 ((100%-30px)/2);
+  }
+  img{
+    width: 85px;
+  }
+}
+@media screen and (min-width: 960px){
+  .contact{
+     display: block;
+     width: calc(25% - 30px);
+  }
+  img{
+    margin: 0;
+    position: relative;
+    left: 50%;
+    transform:translate(-50%, 0%);
+  }
+}
